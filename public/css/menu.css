@@ -1,0 +1,345 @@
+/*CSS styles for mobile version first*/
+
+/*The order I use is as follows:
+
+ * Layout Properties (position, float, clear, display)
+ * Box Model Properties (width, height, margin, padding)
+ * Visual Properties (color, background, border, box-shadow)
+ * Typography Properties (font-size, font-family, text-align, text-transform)
+ * Misc Properties (cursor, overflow, z-index)
+
+Source: https://webdesign.tutsplus.com/articles/outside-in-ordering-css-properties-by-importance--cms-21685
+
+*/
+
+
+@font-face {
+	font-family: 'acherus_militant_1_-_light.otf';
+	src: url('../acherus_militant_1_-_light.otf-webfont.woff2') format('woff2'),
+	url('../acherus_militant_1_-_light.otf-webfont.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+#menu-container {
+	position: relative;
+	padding: 1%;
+	height: 100%;
+	z-index: 3;
+	flex: 1;
+}
+
+#tabs-container {
+	margin: 0;
+	padding: 5px 20px 0px 20px;
+	font-size: 0;
+	z-index: 3;
+}
+
+.tab-links {
+	display: inline-block;
+	//width: 8.72%;
+	width: 9.85%;
+	height: 10px;
+	margin: 0 0.7%;
+	background-color: #ff5201;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	transition: 0.2s;
+	border-radius: 5px;
+	z-index: 1;
+}
+
+.tab-links.active {
+	background-color: white;
+}
+
+.tab-links:first-child {
+	margin-left: 0;
+}
+
+.tab-links:last-child {
+	margin-right: 0;
+}
+
+.items-container {
+	display: none;
+	position: absolute;
+	  left: 50%;
+	//margin-left: 15px;
+	margin-top: 18.75px;
+	width: calc(100% - 40px);
+	height: 90%;
+	padding: 5px;
+	border-radius: 15px;
+	filter: none;
+	background-color: rgba(79, 44, 27, 0.55);
+	//transition: filter 0.06s;
+	transform: translateX(-50%);
+	overflow-x: hidden;
+}
+
+.items-container::after {
+}
+
+.category-name {
+	margin: 10px 20px 5px 20px;
+	font-size: 8.5vw;
+	color: burlywood;
+	//color: #00A6DE;
+	//color: #ff5201;
+}
+
+.items {
+	display: inline-block;
+	width: calc(100% - 20px);
+	margin: 5px;
+	margin-top: 0px;
+	padding: 5px;
+	padding-top: 0px;
+	//color: white;
+	color: burlywood;
+	z-index: 2;
+}
+
+.items ul li {
+	margin: 3px;
+	padding: 2px;
+}
+
+.item {
+	position: relative;
+	margin: 5px;
+	padding: 5px;
+	cursor: pointer;
+}
+
+.item-name, .item-price {
+	display: inline-block;
+}
+
+.item-name {
+	margin: 5px;
+	margin-bottom: 0;
+	font-size: 135%;
+	color: #00A6DE;
+}
+
+.item-name sup {
+	position: absolute;
+	margin-left: 2%;
+	color: red;
+}
+
+.items-container span {
+	position: absolute;
+		left: 50%;
+	margin-top: 2%;
+	width: 90%;
+	font-size: 3.8vw;
+	color: red;
+	transform: translateX(-50%);
+}
+
+.item-desc {
+	margin: 2px 2px 2px 5px;
+	width: 80%;
+	font-size: 95%;
+	color: white;
+}
+
+.item-price {
+	position: absolute;
+	  top: 50%;
+	  right: 0;
+	transform: translateY(-50%);
+	margin: 0;
+	font-size: 120%;
+	float: right;
+	color: #00A6DE;
+	//color: white;
+	//color: burlywood;
+}
+
+.items h3 {
+	position: relative;
+	margin: 5% 10px;
+	color: #00A6DE;
+}
+
+.order-btn {
+	display: block;
+	margin: 3% auto;
+	padding: 2% 10%;
+	width: 18%;
+	border-style: solid;
+	border-radius: 10px;
+	border-width: 1.7px;
+	font-family: 'Oswald', sans-serif;
+	font-size: 120%;
+	line-height: 30px;
+	letter-spacing: 0;
+	//color: #00A6DE;
+	//color: white;
+	color: burlywood;
+	text-decoration: none;
+	text-align: center;
+	background-color: rgba(0,0,0,0);
+}
+
+.uber-exclusive {
+	display: inline-block;
+	margin: 0 auto;
+	text-align: center;
+	padding: 2%;
+	color: #ff5201;
+	width: 100%;
+	font-size: 4.6vw;
+	font-weight: 600;
+
+}
+
+/* The Modal (background)  */
+.item-modal {
+	display: none; /* Hidden by default */
+	position: fixed; /* Stay in place */
+	z-index: 1; /* Sit on top */
+	left: 0;
+	top: 0;
+	width: 100%; /* Full width */
+	height: 100%; /* Full height */
+	overflow: auto; /* Enable scroll if needed */
+	background-color: rgb(0,0,0); /* Fallback color */
+	background-color: rgba(0,0,0,0.8); /* Black w/ opacity */
+	transition: all 5s ease-in-out;
+}
+
+/*Blur Overlay*/
+.modal-overlay {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	filter: blur(7px);
+	//background-color: rgba(255, 82, 1, 0.2);
+}
+
+/* Modal Content/Box */
+.modal-content {
+	position: fixed;
+	color: white;
+	margin: 0 auto; /* Horizontaly centered */
+	padding: 1.7%;
+	width: 90%; /* Could be more or less, depending on screen size */
+	height: auto;
+	max-height: calc(100% - 50px);
+	  top: 50%;
+	  left: 50%;
+	z-index: 3;
+	transform: translate(-50%, -50%);
+	background-color: white;
+	border-radius: 8px;
+}
+
+#itemDesc-container {
+
+}
+
+/*Modal image */
+.item-img {
+	width: 100%;
+}
+
+.itemDesc-name {
+	margin: 1%;
+	padding: 2% 4%;
+	font-size: 5.3vw;
+	text-align: center;
+	color: #ff5201;
+	background-color: rgba(0, 0, 0, 0.85);
+	border-radius: 8px;
+}
+
+/* The Close Button */
+.close-item-modal {
+	display: none;
+	margin: 5px 15px;
+	color: #aaa;
+	float: right;
+	font-size: 3em;
+	font-weight: bold;
+}
+
+.close-item-modal:hover,
+.close-item-modal:focus {
+	color: white;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.halal-mark {
+	position: absolute;
+	  bottom: 0;
+	  right: 0;
+	margin: 2% 3%;
+	width: 20%;
+	height: auto;
+	color: #ff5201;
+	z-index: 3;
+}
+
+.halal-mark img {
+	display: block;
+	position: relative;
+	margin: 5% 0;
+	width: 100%;
+}
+
+@media screen 
+  and (min-device-width: 567px)
+  and (max-device-width: 1023px){
+  #tabs-container {
+    margin: 2% auto 0 auto;
+    width: 80%;
+  }
+  .items-container {
+    width: 72%;
+    height: 84%;
+    padding: 2% 4%;
+  }
+  .category-name {
+    font-size: 4vw;
+  }
+  .modal-content {
+    width: 65%;
+  }
+  .halal-mark {
+    width: 10%;
+  }
+}
+
+@media screen and (min-device-width: 1024px) {
+  #tabs-container {
+    width: 50%;
+    margin: 2% auto 0 auto;
+  }
+  .items-container {
+    width: 42%;
+    height: 80%;
+    padding: 2% 4%;
+  }
+  .category-name {
+    font-size: 3.5vw;
+  }
+  .modal-content {
+    width: 40%;
+    padding: 1%;
+  }
+  .itemDesc-name {
+    font-size: 3vw;
+  }
+  .halal-mark {
+    width: 6%;
+  }
+}

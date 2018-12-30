@@ -1,0 +1,262 @@
+#jobs-container {
+	position: relative;
+	height: 100%;
+	padding: 0 1rem;
+	flex: 1;
+	overflow-y: scroll;
+	z-index: 4;
+}
+
+#jobs-container::-webkit-scrollbar {
+	width: 0px;
+	background: transparent;
+}
+
+.container {
+  margin: 0 auto;
+  position: relative;
+}
+
+.section {
+  display: block;
+  padding: 0.1rem 1rem;
+	z-index: 4;
+}
+
+h1:first-child {
+	margin-top: 2%;
+}
+
+.title:not(:last-child) {
+  margin-bottom: 1.5rem;
+}
+
+.title, .subtitle {
+	color: currentColor;
+  word-break: break-word;
+}
+
+.title em,
+.title span,
+.subtitle em,
+.subtitle span {
+  font-weight: inherit;
+}
+
+.title sub,
+.subtitle sub {
+  font-size: 0.75em;
+}
+
+.title sup,
+.subtitle sup {
+  font-size: 0.75em;
+}
+
+.title .tag,
+.subtitle .tag {
+  vertical-align: middle;
+}
+
+.title {
+  color: red;
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 1.125;
+	font-family: BlinkMacSystemFont,-apple-system,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+
+}
+
+.title strong {
+  color: inherit;
+  font-weight: inherit;
+}
+
+.title + .highlight {
+  margin-top: -0.75rem;
+}
+
+.title:not(.is-spaced) + .subtitle {
+  margin-top: -1.25rem;
+}
+
+.title.is-1 {
+  font-size: 3rem;
+}
+
+.title.is-2 {
+  font-size: 2.5rem;
+}
+
+.title.is-3 {
+  font-size: 2rem;
+}
+
+.title.is-4 {
+  font-size: 1.5rem;
+}
+
+.title.is-5 {
+  font-size: 1.25rem;
+}
+
+.title.is-6 {
+  font-size: 1rem;
+}
+
+.title.is-7 {
+  font-size: 0.75rem;
+}
+
+.subtitle {
+  color: white;
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.2;
+	font-family: BlinkMacSystemFont,-apple-system,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+
+}
+
+.subtitle ul {
+	list-style: disc;
+	margin-left: 1rem;
+}
+
+.subtitle strong {
+  color: #363636;
+  font-weight: 600;
+}
+
+.subtitle:not(.is-spaced) + .title {
+  margin-top: -1.25rem;
+}
+
+.subtitle.is-1 {
+  font-size: 3rem;
+}
+
+.subtitle.is-2 {
+  font-size: 2.5rem;
+}
+
+.subtitle.is-3 {
+  font-size: 2rem;
+}
+
+.subtitle.is-4 {
+  font-size: 1.5rem;
+}
+
+.subtitle.is-5 {
+  font-size: 1.25rem;
+}
+
+.subtitle.is-6 {
+  font-size: 1rem;
+}
+
+.subtitle.is-7 {
+  font-size: 0.75rem;
+}
+
+.button {
+	margin: 20px 0px;
+	position: absolute;
+		left: 50%;
+	border-width: 1px;
+	cursor: pointer;
+	justify-content: center;
+	padding-bottom: calc(.375em - 1px);
+	padding-left: .75em;
+	padding-right: .75em;
+	padding-top: calc(.375em - 1px);
+	text-align: center;
+	white-space: nowrap;
+	transform: translateX(-50%);
+	-webkit-appearance: none;
+	align-items: center;
+	border: 1px solid transparent;
+	border-radius: 4px;
+	box-shadow: none;
+	display: inline-flex;
+	font-size: 1rem;
+	height: 2.25em;
+	line-height: 1.5;
+	vertical-align: top;
+	user-select: none;
+	font-family: BlinkMacSystemFont,-apple-system,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+	box-sizing: inherit;
+}
+
+.is-success {
+	background-color: #23d160;
+	border-color: transparent;
+	color: #fff;
+}
+
+.button a {
+	color: white;
+	text-decoration: none;
+}
+
+@media screen and (min-width: 1088px) {
+  .container {
+    max-width: 900px;
+    width: 90px;
+  }
+  .container.is-fluid {
+    margin-left: 64px;
+    margin-right: 64px;
+    max-width: none;
+    width: auto;
+  }
+
+  .section.is-medium {
+    padding: 9rem 1.5rem;
+  }
+  .section.is-large {
+    padding: 18rem 1.5rem;
+  }
+
+	.title.is-4 {
+		font-size: 2.2rem;
+	}
+	
+	.subtitle.is-6 {
+		font-size: 1.8rem;
+	}
+
+	.button {
+		font-size: 1.8rem;
+	}
+}
+
+@media screen and (max-width: 1279px) {
+  .container.is-widescreen {
+    max-width: 1152px;
+    width: auto;
+  }
+}
+
+@media screen and (max-width: 1471px) {
+  .container.is-fullhd {
+    max-width: 1344px;
+    width: auto;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .container {
+    max-width: 1152px;
+    width: 1152px;
+  }
+}
+
+@media screen and (min-width: 1472px) {
+  .container {
+    max-width: 1344px;
+    width: 1344px;
+  }
+}
+
+
