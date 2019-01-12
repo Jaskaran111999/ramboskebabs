@@ -3,3 +3,6 @@ images/
 videos/
 fonts/
 /public/css/bulma
+nodemon.json
+*.swp
+*.swo
