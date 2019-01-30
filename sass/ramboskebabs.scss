@@ -1,8 +1,23 @@
+//custom variables for bulma
+$button-background-color: #1e1e1e;	
+$button-border-width: 0px;
+$button-padding-horizontal: 0.1em;
+
 @charset "utf-8";
+
+//bulma components
 @import "../node_modules/bulma/sass/utilities/_all.sass";
 @import "../node_modules/bulma/sass/elements/button.sass";
+@import "../node_modules/bulma/sass/elements/image.sass";
+
+//partials
+@import "common";
 @import "header";
+@import "footer";
 @import "index";
+@import "menu";
+
+//fonts
 @import url('https://fonts.googleapis.com/css?family=News+Cycle:400,700');
 
 body, html {
@@ -19,16 +34,3 @@ body {
 	width: 100%;
 	height: 100%;
 }
-
-button {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	background: transparent;
-}
-
-button::-moz-focus-inner{
-  padding : 0;
-  border  : 0;
-}
-

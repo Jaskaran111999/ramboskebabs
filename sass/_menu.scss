@@ -1,0 +1,89 @@
+//$menuItemCurve: cubic-bezier(0.12, 0.83, 0.88, 0.91);
+$menuItemCurve: ease-in-out;
+
+.bg-img {
+	width: 100%;
+	height: 100%
+}
+
+.menu-ctn {
+	display: flex;
+	width: 100%;
+	height: 100%;
+	justify-content: flex-end;
+	z-index: 0;
+}
+
+.menu-categories {
+	position: absolute;
+		top: 50%;
+	width: 250px;
+	margin: 0px;
+	padding-right: 40px;
+	transform: translateY(-50%);
+	list-style: none;
+}
+
+.menu-categories {
+	li {
+		span {
+			font-family: $menuFont;
+			font-size: 2rem;
+			font-weight: 700;
+			line-height: 40px;
+			white-space: nowrap;
+			color: white;
+			opacity: 0.6;
+			-webkit-transition: opacity .2s $menuItemCurve;
+			-moz-transition: opacity .2s $menuItemCurve;
+			-o-transition: opacity .2s $menuItemCurve;
+			transition: opacity .2s $menuItemCurve;
+			cursor: pointer;		
+		}
+	}
+}
+
+.menu-category-ctn {
+	position: relative;
+}
+
+.menu-items {
+	display: none;
+	position: absolute;
+		top: 0px;
+		left: 0px;
+	margin: 0px;
+	padding: 0px 25px 0px 10px;
+	font-family: $menuFont;
+	font-size: 2rem;
+	font-weight: 700;
+	line-height: 40px;
+	white-space: nowrap;
+	color: white;
+	list-style: none;
+	opacity: 0;
+	cursor: pointer;
+	-webkit-transition: opacity .2s $menuItemCurve, transform .2s $menuItemCurve;
+	-moz-transition: opacity .2s $menuItemCurve, transform .2s $menuItemCurve;
+	-o-transition: opacity .2s $menuItemCurve, transform .2s $menuItemCurve;
+	transition: opacity .2s $menuItemCurve, transform .2s $menuItemCurve;
+}
+
+.menu-item {
+	text-align: right;
+}
+
+.is-selected {
+	margin-left: -5px;
+	font-size: 2.1rem!important;
+	opacity: 1!important;
+}
+
+.show-items {
+	display: block;
+	opacity: 0.6!important;
+	-webkit-transform: translateX(-100%);
+	-moz-transform: translateX(-100%);
+	-o-transform: translateX(-100%);
+	transform: translateX(-100%);
+}

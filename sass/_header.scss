@@ -66,25 +66,29 @@ $navIconGap: 20px;
 
 header {
 	display: flex;
+	min-height: fit-content;
 	flex-wrap: nowrap;
 	justify-content: space-between;
 	align-items: center;
-	background-color: rgba(0,0,0, 0.9);
+	//background-color: rgba(0,0,0, 0.9);
+	z-index: 1;
 }
 
 header h1 {
 	display: inline-block;
 	margin: 0px; padding: 5px;
-	line-height: 100px;
+	line-height: 60px;
 	font-family : $menuFont;
-	font-weight: 900;
-	font-size: 7rem;
+	font-size: 5.5rem;
 	letter-spacing: -4px;
 	color: white;
 }
 
+header a {
+	padding: 10px 0px 0px 10px;
+}
+
 header a img {
-	margin: 20px 15px 10px 15px;
 	width: 165px;
 }
 
@@ -94,7 +98,12 @@ header a img {
 	width: $navIconWidth;
 	height:  $navIconHeight;
 	margin: 0px 27px;
-	z-index: 3;
+	z-index: 2;
+}
+
+.nav-menu {
+	display: flex;
+	flex-wrap: nowrap;
 }
 
 //nav icon animation css start
@@ -193,6 +202,7 @@ header a img {
 	background: rgba(0,0,0,1);
 	transform: translate(-50%, -50%) scale(0);
 	transition: transform 0.3s cubic-bezier(0.13, 0.45, 0.54, 0.96);
+	//transition: transform 0.3s cubic-bezier(0.83, 0.49, 0.04, 0.32); //test
 	z-index: 2;
 }
 

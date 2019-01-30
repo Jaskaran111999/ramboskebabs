@@ -1,6 +1,5 @@
 const express = require('express');
 const hbs = require('hbs');
-//const mime = require('mime/lite');
 
 var app = express();
 
@@ -13,9 +12,17 @@ app.set('view engine', 'hbs');
 
 app.use(express.static(__dirname + '/public'));
 
+hbs.registerHelper('getCurrentYear', () => {
+	return new Date().getFullYear();
+});
+
+//route for home/index page
 app.get('/', (req, res) => {
-	//var mimetype = mime.lookup('index.hbs');
 	res.render('index.hbs');
+});
+
+app.get('/menu', (req, res) => {
+	res.render('menu.hbs');
 });
 
 app.listen(3000, '', () => {
