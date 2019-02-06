@@ -2,7 +2,7 @@ node_modules/
 images/
 videos/
 fonts/
-/public/css/bulma
+/public/css
 nodemon.json
 *.swp
 *.swo

@@ -8,23 +8,48 @@ var sidenavLinks = mySidenav.children;
 //variables for menu items animation
 var menuCategories = document.getElementsByClassName('menu-category');
 var menuItemsCtn = document.getElementsByClassName('menu-items');
+var menuItems = document.getElementsByClassName('menu-item');
 
 //milliseconds
 var navOverlayDuration = 300;
 
-function animateMenuCategories() {
+function animateMenuItems(s) {
+	//Reset all menu items from selected category
+	for(i = 0; i < s.length; i++) {
+		s[i].classList.remove('item-is-selected');
+	}
+	event.target.classList.add('item-is-selected');
+}
+
+function animateMenuCategories(e) {
 	//Reset menu categories
 	for(var i = 0; i < menuCategories.length; i++) {
-		menuCategories[i].classList.remove('is-selected');
+		menuCategories[i].classList.remove('category-is-selected');
 	}
 	
 	//Reset menu items container
 	for(var i = 0; i < menuItemsCtn.length; i++) {
 		menuItemsCtn[i].classList.remove('show-items');
 	}
+	
+	//Reset all individual menu items
+	for(var i = 0; i < menuItems.length; i++) {
+		menuItems[i].classList.remove('item-is-selected');
+	}
 
-	event.target.classList.toggle('is-selected');
-	event.target.parentNode.querySelector('ul').classList.add('show-items');
+	e.target.classList.toggle('category-is-selected');
+	e.target.parentNode.querySelector('ul').classList.add('show-items');
+	e.target.parentNode.querySelector('ul').querySelector('li').classList.add('item-is-selected');
+	
+	//Node List of menu items of selected menu category
+	var s = e.target.parentNode.querySelector('ul').querySelectorAll('.menu-item');
+
+	//Add onclick event listeners on menu items of selected category
+	for(i = 0; i < s.length; i++) {
+		s[i].addEventListener('click', function() {
+			animateMenuItems(s);
+		});
+	}
 }
 
 function animateNav() {
@@ -52,10 +77,14 @@ function animateNav() {
 }
 
 function animate() {
+	//Animate Hamburger Menu
 	nav.addEventListener('click', animateNav);
 
+	//Animate the menu on the menu page
 	for(var i = 0; i < menuCategories.length; i++) {
-		menuCategories[i].addEventListener('click', animateMenuCategories);
+		menuCategories[i].addEventListener('click', function(e) {
+			animateMenuCategories(e);
+		});
 	}
 }
 
