@@ -61,6 +61,10 @@ $menuItemCurve: cubic-bezier(0.12, 0.83, 0.88, 0.91);
 
 .menu-item {
 	text-align: right;
+	-webkit-transition: color .2s $menuItemCurve;
+	-moz-transition: color .2s $menuItemCurve;
+	-o-transition: color .2s $menuItemCurve;
+	transition: color .2s $menuItemCurve;
 }
 
 .category-is-selected {
