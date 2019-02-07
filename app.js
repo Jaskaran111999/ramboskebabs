@@ -25,9 +25,10 @@ app.get('/', (req, res) => {
 
 app.get('/menu', (req, res) => {
 	res.render('menu.hbs');
+	res.send(css/ramboskebabs.css);
 });
 
 app.listen(port, '', () => {
-        console.log(`Listening on port ' + ${port}`);
+	console.log(`Listening on port ${port}`);
 });
 
