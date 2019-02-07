@@ -60,11 +60,16 @@ $menuItemCurve: cubic-bezier(0.12, 0.83, 0.88, 0.91);
 }
 
 .menu-item {
+	opacity: 0.8;
 	text-align: right;
-	-webkit-transition: color .2s $menuItemCurve;
-	-moz-transition: color .2s $menuItemCurve;
-	-o-transition: color .2s $menuItemCurve;
-	transition: color .2s $menuItemCurve;
+	-webkit-transition: color .2s $menuItemCurve, opacity .2s $menuItemCurve;
+	-moz-transition: color .2s $menuItemCurve, opacity .2s $menuItemCurve;
+	-o-transition: color .2s $menuItemCurve, opacity .2s $menuItemCurve;
+	transition: color .2s $menuItemCurve, opacity .2s $menuItemCurve;
+}
+
+.menu-item:hover {
+	opacity: 1;
 }
 
 .category-is-selected {
@@ -80,6 +85,8 @@ $menuItemCurve: cubic-bezier(0.12, 0.83, 0.88, 0.91);
 }
 
 .item-is-selected	{
+	font-size: 2.1rem;
+	opacity: 1;
 	color: #009ee1;
 }
 
@@ -113,4 +120,8 @@ $menuItemCurve: cubic-bezier(0.12, 0.83, 0.88, 0.91);
 		top: 0%;
 		transform: translateX(-85%);
 	}
+}
+
+#limg {
+	transition: all 1s ease-in-out;
 }
