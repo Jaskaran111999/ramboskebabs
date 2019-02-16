@@ -1,6 +1,10 @@
 const express = require('express');
 const hbs = require('hbs');
 
+//custom modules
+const menuImgPaths = require('./modules/menuImgPaths');
+
+console.log(menuImgPaths.kebabImgPaths);
 const port = process.env.PORT || 3000;
 
 var app = express();
@@ -24,7 +28,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/menu', (req, res) => {
-	res.render('menu.hbs');
+	res.render('menu.hbs', menuImgPaths);
 });
 
 app.listen(port, '', () => {

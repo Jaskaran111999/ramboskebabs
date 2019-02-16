@@ -18,8 +18,11 @@ function animateMenuItems(s) {
 	for(i = 0; i < s.length; i++) {
 		s[i].classList.remove('item-is-selected');
 	}
+
 	event.target.classList.add('item-is-selected');
-	document.getElementById('limg').src = "../images/icons/kebabicon.svg";
+	
+	var imgPath = event.target.getAttribute("data-imgpath");
+	document.getElementById('item-img').src = imgPath;
 }
 
 function animateMenuCategories(e) {
@@ -42,7 +45,7 @@ function animateMenuCategories(e) {
 	e.target.classList.toggle('category-is-selected');
 	e.target.parentNode.querySelector('ul').classList.add('show-items');
 	e.target.parentNode.querySelector('ul').querySelector('li').classList.add('item-is-selected');
-	
+
 	//Node List of menu items of selected menu category
 	var s = e.target.parentNode.querySelector('ul').querySelectorAll('.menu-item');
 

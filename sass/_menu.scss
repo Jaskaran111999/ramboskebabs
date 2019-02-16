@@ -7,19 +7,25 @@ $menuItemCurve: cubic-bezier(0.12, 0.83, 0.88, 0.91);
 
 .menu-ctn {
 	display: flex;
+	flex-direction: row;
 	width: 100%;
 	height: 100%;
-	justify-content: flex-end;
+	justify-content: space-between;
 	z-index: 0;
+}
+
+.ctn {
+	position: relative;
+	width: 30%;
+	height: 100%;
 }
 
 .menu-categories {
 	position: absolute;
-		top: 50%;
+		top: 10%;
+		right: 0px;
 	width: 250px;
-	margin: 0px;
 	padding-right: 40px;
-	transform: translateY(-50%);
 	list-style: none;
 }
 
@@ -122,6 +128,22 @@ $menuItemCurve: cubic-bezier(0.12, 0.83, 0.88, 0.91);
 	}
 }
 
-#limg {
-	transition: all 1s ease-in-out;
+.item-img-ctn {
+	position: relative;
+	width: 70%;
+	height: 100%;
+	margin-top: 25px;
+	z-index: 0;
+}
+
+#item-img {
+	position: absolute;
+		top: 50%;
+		left: 50%;
+	width: 500px;
+	height: 500px;
+	-webkit-transform: translate(-50%, -75%);
+	-moz-transform: translate(-50%, -75%);
+	-o-transform: translate(-50%, -75%);
+	transform: translate(-50%, -75%);
 }
