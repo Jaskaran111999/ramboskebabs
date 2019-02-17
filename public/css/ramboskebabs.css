@@ -1300,13 +1300,11 @@ section:nth-of-type(2) {
   padding-right: 40px;
   list-style: none; }
 
-.menu-category-ctn {
-  line-height: 33px; }
-
 .menu-category {
   font-family: "News Cycle", sans-serif;
   font-size: 2rem;
   font-weight: 700;
+  line-height: 40px;
   white-space: nowrap;
   color: white;
   opacity: 0.6;

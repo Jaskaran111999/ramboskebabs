@@ -29,14 +29,11 @@ $menuItemCurve: cubic-bezier(0.12, 0.83, 0.88, 0.91);
 	list-style: none;
 }
 
-.menu-category-ctn {
-	line-height: 33px;
-}
-
 .menu-category {
 	font-family: $menuFont;
 	font-size: 2rem;
 	font-weight: 700;
+	line-height: 40px;
 	white-space: nowrap;
 	color: white;
 	opacity: 0.6;

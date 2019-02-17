@@ -85,7 +85,7 @@ function animate() {
 
 	//Animate the menu on the menu page
 	for(var i = 0; i < menuCategories.length; i++) {
-		menuCategories[i].addEventListener('mouseover', function(e) {
+		menuCategories[i].addEventListener('click', function(e) {
 			animateMenuCategories(e);
 		});
 	}
