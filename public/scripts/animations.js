@@ -72,12 +72,10 @@ function animateNav() {
 	}
 
 	if(mySidenav.classList[1] == "sidenav-opened") {
-		//setTimeout(function () {
-			mySidenav.classList.remove("sidenav-opened");
-			for(var i = 0; i < sidenavLinks.length; i++) {
-				sidenavLinks[i].style.right = "-100%";
-			}
-		//}, navOverlayDuration/2);
+		mySidenav.classList.remove("sidenav-opened");
+		for(var i = 0; i < sidenavLinks.length; i++) {
+			sidenavLinks[i].style.right = "-100%";
+		}
 	}
 }
 
@@ -87,7 +85,7 @@ function animate() {
 
 	//Animate the menu on the menu page
 	for(var i = 0; i < menuCategories.length; i++) {
-		menuCategories[i].addEventListener('click', function(e) {
+		menuCategories[i].addEventListener('mouseover', function(e) {
 			animateMenuCategories(e);
 		});
 	}
