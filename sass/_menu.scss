@@ -327,17 +327,22 @@ $menuItemCurve: cubic-bezier(0.12, 0.83, 0.88, 0.91);
 	.item-img-ctn {
 		width: 100%;
 	}
+
+	#item-img {
+		min-width: 270px;
+		top: 70%;
+	}
 }
 
 @media (max-width: 399px) {
 	.menu-categories {
 		width: 126px;
-		padding-left: 20px;
-		padding-right: 24px;
+		padding-left: 15px;
+		padding-right: 10px;
 	}
 
 	.menu-category {
-		font-size: 1.3rem;
+		font-size: 1.2rem;
 		line-height: 26px;
 	}
 
@@ -346,14 +351,23 @@ $menuItemCurve: cubic-bezier(0.12, 0.83, 0.88, 0.91);
 	}
 
 	.category-is-selected {
-		font-size: 1.4rem;
-	}
-
-	.menu-items {
 		font-size: 1.3rem;
 	}
 
+	.menu-items {
+		font-size: 1.2rem;
+	}
+
 	.item-is-selected {
-		font-size: 1.4rem;
+		font-size: 1.3rem;
+	}
+
+	#item-img {
+		min-width: 220px;
+	}
+
+	#copyright {
+		margin: 0px;
+		margin-bottom: 3px;
 	}
 }

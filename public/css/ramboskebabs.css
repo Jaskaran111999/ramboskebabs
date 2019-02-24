@@ -1643,24 +1643,32 @@ section:nth-of-type(2) {
 
 @media (max-width: 534px) {
   .item-img-ctn {
-    width: 100%; } }
+    width: 100%; }
+  #item-img {
+    min-width: 270px;
+    top: 70%; } }
 
 @media (max-width: 399px) {
   .menu-categories {
     width: 126px;
-    padding-left: 20px;
-    padding-right: 24px; }
+    padding-left: 15px;
+    padding-right: 10px; }
   .menu-category {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     line-height: 26px; }
   .menu-items {
     line-height: 26px; }
   .category-is-selected {
-    font-size: 1.4rem; }
-  .menu-items {
     font-size: 1.3rem; }
+  .menu-items {
+    font-size: 1.2rem; }
   .item-is-selected {
-    font-size: 1.4rem; } }
+    font-size: 1.3rem; }
+  #item-img {
+    min-width: 220px; }
+  #copyright {
+    margin: 0px;
+    margin-bottom: 3px; } }
 
 body, html {
   margin: 0;
