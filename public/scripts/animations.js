@@ -4,6 +4,8 @@ var navIcon = document.getElementById('nav-icon');
 var navOverlay = document.getElementById("nav-overlay");
 var mySidenav = document.getElementById("mySidenav");
 var sidenavLinks = mySidenav.children;
+var socialLinksCtn = document.getElementsByClassName("social-links")[0];
+var copyrightCtn = document.getElementById("copyright");
 
 //variables for menu items animation
 var menuCategories = document.getElementsByClassName('menu-category');
@@ -57,6 +59,9 @@ function animateMenuCategories(e) {
 function animateNav() {
 	navIcon.classList.toggle("open");
 	navOverlay.classList.toggle("nav-overlay-expanded");
+	socialLinksCtn.classList.toggle("mobile-social-links");
+	copyright.classList.toggle("copyright-mobile");
+	
 
 	if(mySidenav.classList[1] == null) {
 		mySidenav.classList.add("sidenav-opened");

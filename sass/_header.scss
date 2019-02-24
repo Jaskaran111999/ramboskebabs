@@ -329,6 +329,16 @@ header a img {
 	}
 }
 
+//footer breakpoint
+@media (max-width: 534px) {
+	.mobile-social-links {
+		display: inline-block;
+		position: relative;
+			bottom: 0px;
+			right: 0px;
+	}
+}
+
 @media (max-width: 461px) {
 	header h1 {
 		padding-right: calc(45px + 10px + 25px);

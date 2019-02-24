@@ -87,6 +87,7 @@ footer {
 @media (max-width: 534px) {
 	footer {
 		height: 50px;
+		z-index: 4;
 	}
 
 	#copyright {
@@ -98,14 +99,15 @@ footer {
 		transform: translateX(-50%);
 	}
 
+	.copyright-mobile {
+		display: none;
+	}
+
 	.social-links {
 		display: none;
 	}
 
 	.mobile-social-links {
-		display: inline-block;
-		position: relative;
-			bottom: 0px;
-			right: 0px;
+		display: block;
 	}
 }
