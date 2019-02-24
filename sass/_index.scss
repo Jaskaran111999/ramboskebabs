@@ -82,6 +82,7 @@ section:nth-of-type(2) {
 	position: relative;
 	flex-direction: column;
 	height: 60%;
+	user-select: none;
 	z-index: 0;
 }
 

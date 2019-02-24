@@ -1,5 +1,5 @@
 //variables for hamburger menu animation
-var nav = document.getElementById('nav');
+var nav = document.getElementById('nav-ctn');
 var navIcon = document.getElementById('nav-icon');
 var navOverlay = document.getElementById("nav-overlay");
 var mySidenav = document.getElementById("mySidenav");
@@ -9,9 +9,6 @@ var sidenavLinks = mySidenav.children;
 var menuCategories = document.getElementsByClassName('menu-category');
 var menuItemsCtn = document.getElementsByClassName('menu-items');
 var menuItems = document.getElementsByClassName('menu-item');
-
-//milliseconds
-var navOverlayDuration = 300;
 
 function animateMenuItems(s) {
 	//Reset all menu items from selected category
@@ -66,7 +63,6 @@ function animateNav() {
 
 		for(var i = 0; i < sidenavLinks.length; i++) {
 			sidenavLinks[i].style.right = "0%";
-			//wait(100);
 		}
 		return;
 	}
@@ -81,7 +77,7 @@ function animateNav() {
 
 function animate() {
 	//Animate Hamburger Menu
-	nav.addEventListener('click', animateNav);
+	navIcon.addEventListener('click', animateNav);
 
 	//Animate the menu on the menu page
 	for(var i = 0; i < menuCategories.length; i++) {
