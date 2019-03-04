@@ -31,6 +31,10 @@ app.get('/menu', (req, res) => {
 	res.render('menu.hbs', menuImgPaths);
 });
 
+app.get('/events', (req, res) => {
+	res.render('events.hbs');
+});
+
 app.listen(port, '', () => {
 	console.log(`Listening on port ${port}`);
 });

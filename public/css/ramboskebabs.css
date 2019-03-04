@@ -876,7 +876,7 @@ header {
 header h1 {
   margin: 0px;
   padding: 5px;
-  padding-right: calc(85px + 20px + 35px);
+  padding-right: calc(85px + 28px + 35px);
   line-height: 77px;
   font-family: "News Cycle", sans-serif;
   font-size: 5.5rem;
@@ -898,9 +898,10 @@ header a img {
 #nav-icon {
   position: absolute;
   top: 50%;
-  right: 28px;
+  right: 0px;
   width: 85px;
   height: 85px;
+  margin-right: 28px;
   -webkit-transform: rotate(0deg) translateY(-50%);
   -moz-transform: rotate(0deg) translateY(-50%);
   -o-transform: rotate(0deg) translateY(-50%);
@@ -1016,14 +1017,15 @@ header a img {
 
 @media (max-width: 1079px) {
   header h1 {
-    padding-right: calc(70px + 15px + 35px);
+    padding-right: calc(70px + 15px + 28px);
     font-size: 4rem;
     line-height: 62px; }
   header a img {
     width: 130px; }
   #nav-icon {
     width: 70px;
-    height: 70px; }
+    height: 70px;
+    margin-right: 28px; }
   #nav-icon span {
     height: 7px; }
   .sidenav {
@@ -1033,7 +1035,7 @@ header a img {
 
 @media (max-width: 734px) {
   header h1 {
-    padding-right: calc(55px + 12px + 30px);
+    padding-right: calc(55px + 12px + 22px);
     font-size: 3.2rem;
     line-height: 41px; }
   header a img {
@@ -1041,7 +1043,7 @@ header a img {
   #nav-icon {
     width: 55px;
     height: 55px;
-    right: 22px; }
+    margin-right: 22px; }
   #nav-icon span {
     height: 6px; }
   .sidenav a {
@@ -1049,7 +1051,7 @@ header a img {
 
 @media (max-width: 561px) {
   header h1 {
-    padding-right: calc(45px + 12px + 25px);
+    padding-right: calc(45px + 12px + 20px);
     font-size: 2.4rem;
     line-height: 35px;
     letter-spacing: -1px; }
@@ -1058,7 +1060,7 @@ header a img {
   #nav-icon {
     width: 45px;
     height: 45px;
-    right: 20px; }
+    margin-right: 20px; }
   #nav-icon span {
     height: 5px; }
   .sidenav {
@@ -1075,7 +1077,7 @@ header a img {
 
 @media (max-width: 461px) {
   header h1 {
-    padding-right: calc(45px + 10px + 25px);
+    padding-right: calc(45px + 10px + 15px);
     margin: 15px 0px;
     font-size: 2.6rem;
     line-height: 39px; }
@@ -1084,20 +1086,21 @@ header a img {
   #nav-icon {
     width: 45px;
     height: 45px;
-    right: 15px; }
+    margin-right: 15px; }
   .sidenav a {
     font-size: 1.6rem;
     padding: 3px 23px; } }
 
 @media (max-width: 399px) {
   header h1 {
-    padding-right: calc(40px + 10px + 22px);
+    padding-right: calc(45px + 10px + 15px);
+    margin: 15px 0px;
     margin: 10px 0px;
     font-size: 2rem; }
   #nav-icon {
     width: 45px;
     height: 45px;
-    right: 15px; }
+    margin-right: 15px; }
   #nav-icon span {
     height: 4px; }
   .sidenav {
@@ -1669,6 +1672,76 @@ section:nth-of-type(2) {
   #copyright {
     margin: 0px;
     margin-bottom: 3px; } }
+
+#event-ctn {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  user-select: none;
+  z-index: 0; }
+
+#timeline__ctn::after, #timeline__ctn::before {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+#timeline__ctn {
+  display: inline-block;
+  position: absolute;
+  right: 0px;
+  margin: 25px 28px 0px 0px;
+  padding: 0;
+  width: 85px;
+  height: calc(100% - 160px); }
+
+#timeline__ctn::before {
+  /* this is the vertical line */
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 7px;
+  height: 100%;
+  border-radius: 4px;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  transform: translateX(-50%);
+  background: white; }
+
+.timeline__event {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  left: 50%;
+  width: 13px;
+  height: 13px;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  transform: translateX(-50%);
+  background-color: white;
+  border-radius: 50%; }
+
+@media (max-width: 1079px) {
+  #timeline__ctn {
+    width: 70px; } }
+
+@media (max-width: 734px) {
+  #timeline__ctn {
+    width: 55px;
+    margin-right: 22px; } }
+
+@media (max-width: 561px) {
+  #timeline__ctn {
+    width: 45px;
+    margin-right: 20px; } }
+
+@media (max-width: 461px) {
+  #timeline__ctn {
+    width: 45px;
+    margin-right: 15px; } }
 
 body, html {
   margin: 0;

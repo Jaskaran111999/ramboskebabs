@@ -1,70 +1,11 @@
 $menuItemCurve: cubic-bezier(0.12, 0.83, 0.88, 0.91);
-
-//@font-face {
-//	font-family: newsCycleRegular;
-//	src: url(../public/fonts/NewsCycle-Regular.ttf) format("ttf");
-//}
-//
-//@font-face {
-//	font-family: newsCycleBold;
-//	src: url(../public/fonts/NewsCycle-Bold.ttf) format("ttf");
-//}
-//
-//@font-face {
-//	font-family: bubblegum;
-//	src: url(../public/fonts/Bubblegum.ttf) format("ttf");
-//}
-//
-//@font-face {
-//	font-family: cookies;
-//	src: url(../public/fonts/Cookies.ttf) format("ttf");
-//}
-//
-//@font-face {
-//	font-family: dreamOrphansBold;
-//	src: url('../public/fonts/dream-orphans_bolf.ttf') format("ttf");
-//}
-//
-//@font-face {
-//	font-family: engebrechtreBold;
-//	src: url('../public/fonts/engebrechtre_bold.ttf') format("ttf");
-//}
-//
-//@font-face {
-//	font-family: fundamentalRegular;
-//	src: url('../public/fonts/fundamental-rush.regular.ttf') format("ttf");
-//}
-//
-//@font-face {
-//	font-family: kenyanCoffeeBold;
-//	src: url('../public/fonts/kenyan-coffee.bold.ttf') format("ttf");
-//}
-//
-//@font-face {
-//	font-family: superstar;
-//	src: url('../public/fonts/Superstar%20M54.ttf') format("ttf");
-//}
-//
-//@font-face {
-//	font-family: steelfish;
-//	src: url('../public/fonts/steelsifh_extrabold.ttf') format("ttf");
-//}
-
-//$menuFont: 'newsCycleRegular', sans-serif;
-//$menuFont: 'newsCycleBold', sans-serif;
-//$menuFont: 'bubblegum', sans-serif;
-//$menuFont: 'cookies', sans-serif;
-//$menuFont: 'dreamOrphansBold', sans-serif;
-//$menuFont: 'engebrechtreBold', sans-serif;
-//$menuFont: 'fundamentalRegular', sans-serif;
-//$menuFont: 'kenyanCoffeeBold', sans-serif;
-//$menuFont: 'superstar', sans-serif;
-//$menuFont: 'steelfish', sans-serif;
 $menuFont: 'News Cycle', sans-serif;
 $navIconWidth: 85px;
 $navIconHeight: 85px;
 $navIconSpanHeight: 8px;
 $navIconGap: 20px;
+$navGap: 35px;
+$rspace: 28px; //copy of this variable is in event styles
 
 header {
 	display: -webkit-flex;
@@ -83,7 +24,7 @@ header {
 
 header h1 {
 	margin: 0px; padding: 5px;
-	padding-right: calc(#{$navIconWidth} + 20px + 35px);
+	padding-right: calc(#{$navIconWidth} + #{$rspace} + #{$navGap});
 	line-height: 77px;
 	font-family : $menuFont;
 	font-size: 5.5rem;
@@ -109,9 +50,10 @@ header a img {
 #nav-icon {
 	position: absolute;
 		top: 50%;
-		right: 28px;
+		right: 0px;
 	width: $navIconWidth;
 	height: $navIconHeight;
+	margin-right: 28px;
 	-webkit-transform: rotate(0deg) translateY(-50%);
 	-moz-transform: rotate(0deg) translateY(-50%);
 	-o-transform: rotate(0deg) translateY(-50%);
@@ -244,8 +186,10 @@ header a img {
 
 //natural breakpoints
 @media (max-width: 1079px) {
+	$navIconWidth: 70px;
+	$navIconHeight: 70px;
 	header h1 {
-		padding-right: calc(70px + 15px + 35px);
+		padding-right: calc(#{$navIconWidth} + 15px + #{$rspace});
 		font-size: 4rem;
 		line-height: 62px;
 	}
@@ -255,8 +199,9 @@ header a img {
 	}
 
 	#nav-icon {
-		width: 70px;
-		height: 70px;
+		width: $navIconWidth;
+		height: $navIconHeight;
+		margin-right: $rspace;
 	}
 
 	#nav-icon span{
@@ -273,8 +218,12 @@ header a img {
 }
 
 @media (max-width: 734px) {
+	$navIconWidth: 55px;
+	$navIconHeight: 55px;
+	$rspace: 22px;
+
 	header h1 {
-		padding-right: calc(55px + 12px + 30px);
+		padding-right: calc(#{$navIconWidth} + 12px + #{$rspace});
 		font-size: 3.2rem;
 		line-height: 41px;
 	}
@@ -284,9 +233,9 @@ header a img {
 	}
 
 	#nav-icon {
-		width: 55px;
-		height: 55px;
-		right: 22px;
+		width: $navIconWidth;
+		height: $navIconHeight;
+		margin-right: $rspace;
 	}
 
 	#nav-icon span{
@@ -299,8 +248,11 @@ header a img {
 }
 
 @media (max-width: 561px) {
+	$navIconWidth: 45px;
+	$navIconHeight: 45px;
+	$rspace: 20px;
 	header h1 {
-		padding-right: calc(45px + 12px + 25px);
+		padding-right: calc(#{$navIconWidth} + 12px + #{$rspace});
 		font-size: 2.4rem;
 		line-height: 35px;
 		letter-spacing: -1px;
@@ -311,9 +263,9 @@ header a img {
 	}
 
 	#nav-icon {
-		width: 45px;
-		height: 45px;
-		right: 20px;
+		width: $navIconWidth;
+		height: $navIconHeight;
+		margin-right: $rspace;
 	}
 
 	#nav-icon span{
@@ -340,8 +292,12 @@ header a img {
 }
 
 @media (max-width: 461px) {
+	$navIconWidth: 45px;
+	$navIconHeight: 45px;
+	$rspace: 15px;
+	
 	header h1 {
-		padding-right: calc(45px + 10px + 25px);
+		padding-right: calc(#{$navIconWidth} + 10px + #{$rspace});
 		margin: 15px 0px;
 		font-size: 2.6rem;
 		line-height: 39px;
@@ -352,9 +308,9 @@ header a img {
 	}
 
 	#nav-icon {
-		width: 45px;
-		height: 45px;
-		right: 15px;
+		width: $navIconWidth;
+		height: $navIconHeight;
+		margin-right: $rspace;
 	}
 
 	.sidenav a {
@@ -364,16 +320,21 @@ header a img {
 }
 
 @media (max-width: 399px) {
+	$navIconWidth: 45px;
+	$navIconHeight: 45px;
+	$rspace: 15px;
+
 	header h1 {
-		padding-right: calc(40px + 10px + 22px);
+		padding-right: calc(#{$navIconWidth} + 10px + #{$rspace});
+		margin: 15px 0px;
 		margin: 10px 0px;
 		font-size: 2rem;
 	}
 
 	#nav-icon {
-		width: 45px;
-		height: 45px;
-		right: 15px;
+		width: $navIconWidth;
+		height: $navIconHeight;
+		margin-right: $rspace;
 	}
 
 	#nav-icon span{

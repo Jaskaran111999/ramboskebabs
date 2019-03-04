@@ -4,21 +4,22 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-		"prestart-dev": "npm run css-build",
-		"start-dev": "nodemon app.js -e js,hbs,scss",
-		"start": "node app.js",
-		"css-build": "node-sass --omit-source-map-url sass/ramboskebabs.scss public/css/ramboskebabs.css",
+    "prestart-dev": "npm run css-build",
+    "start-dev": "nodemon app.js -e js,hbs,scss",
+    "start": "node app.js",
+    "css-build": "node-sass --omit-source-map-url sass/ramboskebabs.scss public/css/ramboskebabs.css",
     "test": "echo \"Error: no test specified\" && exit 1"
-	},
+  },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "bulma-timeline": "^3.0.1",
     "express": "^4.16.4",
     "hbs": "^4.0.1"
   },
   "devDependencies": {
     "bulma": "^0.7.2",
     "node-sass": "^4.11.0",
-		"nodemon": "^1.18.9"
+    "nodemon": "^1.18.9"
   }
 }

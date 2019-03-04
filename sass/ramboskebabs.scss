@@ -9,6 +9,8 @@ $button-padding-horizontal: 0.1em;
 @import "../node_modules/bulma/sass/utilities/_all.sass";
 @import "../node_modules/bulma/sass/elements/button.sass";
 @import "../node_modules/bulma/sass/elements/image.sass";
+//@import "../node_modules/bulma-timeline/dist/css/bulma-timeline.sass";
+//@import "../node_modules/~bulma-timeline";
 
 //partials
 @import "common";
@@ -16,6 +18,7 @@ $button-padding-horizontal: 0.1em;
 @import "footer";
 @import "index";
 @import "menu";
+@import "events";
 
 //fonts
 @import url('https://fonts.googleapis.com/css?family=News+Cycle:400,700');
