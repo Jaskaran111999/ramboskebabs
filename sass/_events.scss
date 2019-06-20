@@ -2,6 +2,7 @@ $timeline-color: white;
 $rspace: 28px;
 $eventNameFSize: 1.2rem;
 
+/*
 #event-ctn {
 	display: flex;
 	position: relative;
@@ -9,6 +10,17 @@ $eventNameFSize: 1.2rem;
 	width: 100%;
 	height: 100%;
 	z-index: 0;
+}
+*/
+
+#event-ctn {
+	display: flex;
+	position: relative;
+		left: calc(100% - #{$rspace} - 85px);
+  margin: 25px #{$rspace} 0px 0px;
+	width: fit-content;
+	height: 100%;
+	flex-direction: row;
 }
 
 #timeline__ctn::after, #timeline__ctn::before {
@@ -18,9 +30,9 @@ $eventNameFSize: 1.2rem;
 
 #timeline__ctn {
 	display: inline-block;
-  position: absolute;
-		right: 0px;
-  margin: 25px #{$rspace} 0px 0px;
+  position: relative;
+		//right: 0px;
+  //margin: 25px #{$rspace} 0px 0px;
   padding: 0 ;
   width: 85px;
 	height: calc(100% - 160px);
@@ -109,7 +121,6 @@ $eventNameFSize: 1.2rem;
 
 .event-poster {
 	display: none;
-	position: absolute;
 	width: 100%;
 	height: 100%;
 }
@@ -129,6 +140,76 @@ $eventNameFSize: 1.2rem;
 .poster-img {
 	position: absolute;
 	width: 100%;
+	user-select: none;
+}
+
+#video-ctn {
+	display: none;
+	position: absolute;
+		top: 50%;
+		left: 50%;
+	width: fit-content;
+	height: fit-content;
+	transform: translate(-50%, -50%);
+	z-index: 2;
+}
+
+.event-video {
+	display: none;
+}
+
+.show-video {
+	display: block;
+}
+
+//video play button fix
+.vjs-big-play-button {
+	top: 50%!important;
+	left: 50%!important;
+	transform: translate(-50%, -50%);
+}
+
+#event-overlay {
+	display: none;
+	position: fixed;
+		top: 0;
+		left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 1);
+	z-index: 1;
+}
+
+.close {
+  position: absolute;
+  right: 32px;
+  top: 32px;
+  width: 32px;
+  height: 32px;
+	cursor: pointer;
+	user-select: none;
+}
+
+.close:hover {
+	color: #ff5201;
+}
+
+.close:before, .close:after {
+  position: absolute;
+  left: 15px;
+  content: ' ';
+  height: 33px;
+  width: 2px;
+	color: white;
+  background-color: #333;
+}
+
+.close:before {
+  transform: rotate(45deg);
+}
+
+.close:after {
+  transform: rotate(-45deg);
 }
 
 .timelineEvent-is-selected {
@@ -165,34 +246,59 @@ $eventNameFSize: 1.2rem;
 }
 
 @media (max-width: 1079px) {
+	$timelineWidth: 70px;
+
 	#timeline__ctn {
-		width: 70px;
+		width: $timelineWidth;
+	}
+
+	#event-ctn {
+		left: calc(100% - #{$rspace} - #{$timelineWidth});
+		margin: 25px #{$rspace} 0px 0px;
 	}
 }
 
 @media (max-width: 734px) {
 	$rspace: 22px;
+	$timelineWidth: 55px;
 
 	#timeline__ctn {
-		width: 55px;
+		width: $timelineWidth;
 		margin-right: $rspace;
+	}
+
+	#event-ctn {
+		left: calc(100% - #{$rspace} - #{$timelineWidth});
+		margin: 25px #{$rspace} 0px 0px;
 	}
 }
 
 @media (max-width: 561px) {
 	$rspace: 20px;
+	$timelineWidth: 45px;
 
 	#timeline__ctn {
-		width: 45px;
+		width: $timelineWidth;
 		margin-right: $rspace;
+	}
+
+	#event-ctn {
+		left: calc(100% - #{$rspace} - #{$timelineWidth});
+		margin: 25px #{$rspace} 0px 0px;
 	}
 }
 
 @media (max-width: 461px) {
 	$rspace: 15px;
+	$timelineWidth: 45px;
 
 	#timeline__ctn {
-		width: 45px;
+		width: $timelineWidth;
 		margin-right: $rspace;
+	}
+
+	#event-ctn {
+		left: calc(100% - #{$rspace} - #{$timelineWidth});
+		margin: 25px #{$rspace} 0px 0px;
 	}
 }
