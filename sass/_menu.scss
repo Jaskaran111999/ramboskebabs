@@ -103,7 +103,7 @@ $menuItemCurve: cubic-bezier(0.12, 0.83, 0.88, 0.91);
 	color: #009ee1;
 }
 
-@-webkit-keyframes menuItemAnimation {
+@keyframes menuItemAnimation {
 	0% {
 		opacity: 0;
 	}
@@ -122,7 +122,7 @@ $menuItemCurve: cubic-bezier(0.12, 0.83, 0.88, 0.91);
 	}
 }
 
-@keyframes menuItemAnimation {
+@-webkit-keyframes menuItemAnimation {
 	0% {
 		opacity: 0;
 	}
