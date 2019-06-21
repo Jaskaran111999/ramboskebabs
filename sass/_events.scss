@@ -169,6 +169,11 @@ $eventNameFSize: 1.2rem;
 	transform: translate(-50%, -50%);
 }
 
+.vjs_video_3-dimensions {
+	max-width: 100%;
+	aspect-ratio: 16/9;
+}
+
 #event-overlay {
 	display: none;
 	position: fixed;
