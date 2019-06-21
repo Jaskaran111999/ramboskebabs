@@ -79,12 +79,12 @@ body {
 	color: #4ca82e;
 }
 
-.indexbtns span {
-	margin-left: 15px;
-}
-
 .indexbtns:nth-child(2) {
 	margin-left: 25px;
+}
+
+.indexbtns span {
+	margin-left: 15px;
 }
 
 .indexbtns:hover {
@@ -233,11 +233,15 @@ body {
 
 //same as header breakpoint
 @media (max-width: 461px) {
+	.tline-ctn {
+		height: 70%;
+	}
+
 	.tline h2 {
 		margin: 0 auto;
 		width: 283px;
-		font-size: 2.6rem;
-		line-height: 39px;
+		font-size: 3rem;
+		line-height: 64px;
 	}
 
 	.tline h3 {
@@ -245,13 +249,28 @@ body {
 		line-height: 70px;
 	}
 
-	.indexbtns {
-		top: 5px;
-		font-size: 0.8rem;
-		line-height: 30px;
+	.btn-flex-ctn {
+		flex-direction: column;
 	}
 
-	.btn-flex-ctn {
-		justify-content: center;
+	.indexbtns {
+		top: 10px;
+		left: 50%;
+		transform: translateX(-50%);
+		font-size: 1.2rem;
+		line-height: 40px;
+	}
+
+	.indexbtns:nth-child(1) {
+		margin-bottom: 15px;
+	}
+
+	.indexbtns:nth-child(2) {
+		margin-left: 0px;
+	}
+
+	.image.is-48x48 {
+		width: 34px;
+		height: 34px;
 	}
 }
