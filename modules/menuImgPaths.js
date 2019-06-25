@@ -13,7 +13,10 @@ var menuImgPaths = {
 		lSnackpack: '../images/img-snackpack-lamb.jpg',
 		cSnackpack: '../images/img-snackpack-chicken.jpg',
 		mSnackpack: '../images/img-snackpack-mix.jpg',
-		fSnackpack: '../images/img-snackpack-falafel.jpg'
+		fSnackpack: { 
+			src: '../images/img-snackpack-falafel-w1080.webp',
+			srcset: '../images/img-snackpack-falafel-w480.webp 480w, ../images/img-snackpack-falafel-w760.webp 760w, ../images/img-snackpack-falafel-w1080.webp 1080w'
+		}
 	}, ricepackImgPaths: {
 		lRicepack: '../images/img-ricepack-lamb.jpg',
 		cRicepack: '../images/img-ricepack-chicken.jpg',

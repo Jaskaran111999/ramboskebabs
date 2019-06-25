@@ -11,6 +11,7 @@ var copyrightCtn = document.getElementById("copyright");
 var menuCategories = document.getElementsByClassName('menu-category');
 var menuItemsCtn = document.getElementsByClassName('menu-items');
 var menuItems = document.getElementsByClassName('menu-item');
+var itemImgCtn = document.getElementById('item-img');
 
 function animateMenuItems(s) {
 	//Reset all menu items from selected category
@@ -20,8 +21,13 @@ function animateMenuItems(s) {
 
 	event.target.classList.add('item-is-selected');
 	
+	//get the menu item src and srcset
 	var imgPath = event.target.getAttribute("data-imgpath");
-	document.getElementById('item-img').src = imgPath;
+	var imgSrcSet = event.target.getAttribute("data-srcSetPath");
+
+	//change src and srcset
+	itemImgCtn.src = imgPath;
+	itemImgCtn.srcset = imgSrcSet;
 }
 
 function animateMenuCategories(e) {
