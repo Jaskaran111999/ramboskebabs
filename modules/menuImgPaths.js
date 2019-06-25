@@ -13,7 +13,7 @@ var menuImgPaths = {
 		lSnackpack: '../images/img-snackpack-lamb.jpg',
 		cSnackpack: '../images/img-snackpack-chicken.jpg',
 		mSnackpack: '../images/img-snackpack-mix.jpg',
-		fSnackpack: '../images/img-snackpack-falafel.png'
+		fSnackpack: '../images/img-snackpack-falafel.jpg'
 	}, ricepackImgPaths: {
 		lRicepack: '../images/img-ricepack-lamb.jpg',
 		cRicepack: '../images/img-ricepack-chicken.jpg',
