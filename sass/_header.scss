@@ -8,81 +8,81 @@ $navGap: 35px;
 $rspace: 28px; //copy of this variable is in event styles
 
 header {
-	display: -webkit-flex;
-	display: flex;
-	min-height: fit-content;
-	-webkit-flex-wrap: nowrap;
-	flex-wrap: nowrap;
-	justify-content: space-between;
-	user-select: none;
-	z-index: 1;
+  display: -webkit-flex;
+  display: flex;
+  min-height: fit-content;
+  -webkit-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  user-select: none;
+  z-index: 1;
 }
 
 .cmplogo {
-	padding: 10px 0px 0px 20px;
+  padding: 10px 0px 0px 20px;
 }
 
 header h1 {
-	margin: 0px; padding: 5px;
-	padding-right: calc(#{$navIconWidth} + #{$rspace} + #{$navGap});
-	line-height: 77px;
-	font-family : $menuFont;
-	font-size: 5.5rem;
-	letter-spacing: -4px;
-	color: white;
+  margin: 0px; padding: 5px;
+  padding-right: calc(#{$navIconWidth} + #{$rspace} + #{$navGap});
+  line-height: 77px;
+  font-family : $menuFont;
+  font-size: 5.5rem;
+  letter-spacing: -4px;
+  color: white;
 }
 
 header a img {
-	width: 165px;
+  width: 165px;
 }
 
 .nav-menu {
-	display: flex;
-	position: relative;
-	flex-direction: row;
-	-webkit-flex-wrap: nowrap;
-	flex-wrap: nowrap;
-	align-items: center;
-	justify-content: space-between;
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  -webkit-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
 }
 
 //nav icon animation css start
 #nav-icon {
-	position: absolute;
-		top: 50%;
-		right: 0px;
-	width: $navIconWidth;
-	height: $navIconHeight;
-	margin-right: 28px;
-	-webkit-transform: rotate(0deg) translateY(-50%);
-	-moz-transform: rotate(0deg) translateY(-50%);
-	-o-transform: rotate(0deg) translateY(-50%);
-	transform: rotate(0deg) translateY(-50%);
-	-webkit-transition: .5s $menuItemCurve;
-	-moz-transition: .5s $menuItemCurve;
-	-o-transition: .5s $menuItemCurve;
-	transition: .5s $menuItemCurve;
-	cursor: pointer;
+  position: absolute;
+    top: 50%;
+    right: 0px;
+  width: $navIconWidth;
+  height: $navIconHeight;
+  margin-right: 28px;
+  -webkit-transform: rotate(0deg) translateY(-50%);
+  -moz-transform: rotate(0deg) translateY(-50%);
+  -o-transform: rotate(0deg) translateY(-50%);
+  transform: rotate(0deg) translateY(-50%);
+  -webkit-transition: .5s $menuItemCurve;
+  -moz-transition: .5s $menuItemCurve;
+  -o-transition: .5s $menuItemCurve;
+  transition: .5s $menuItemCurve;
+  cursor: pointer;
 }
 
 #nav-icon span {
-	display: inline-block;
-	position: absolute;
-		left: 50%;
-	width: 80%;
-	height: $navIconSpanHeight;
-	background: #ff5201;
-	border-radius: 5px;
-	opacity: 1;
-	-webkit-transform: rotate(0deg) translate(-50%, -50%);
-	-moz-transform: rotate(0deg) translate(-50%, -50%);
-	-o-transform: rotate(0deg) translate(-50%, -50%);
-	transform: rotate(0deg) translate(-50%, -50%);
-	-webkit-transition: .25s $menuItemCurve;
-	-moz-transition: .25s $menuItemCurve;
-	-o-transition: .25s $menuItemCurve;
-	transition: .25s $menuItemCurve;
-	z-index: 3;
+  display: inline-block;
+  position: absolute;
+    left: 50%;
+  width: 80%;
+  height: $navIconSpanHeight;
+  background: #ff5201;
+  border-radius: 5px;
+  opacity: 1;
+  -webkit-transform: rotate(0deg) translate(-50%, -50%);
+  -moz-transform: rotate(0deg) translate(-50%, -50%);
+  -o-transform: rotate(0deg) translate(-50%, -50%);
+  transform: rotate(0deg) translate(-50%, -50%);
+  -webkit-transition: .25s $menuItemCurve;
+  -moz-transition: .25s $menuItemCurve;
+  -o-transition: .25s $menuItemCurve;
+  transition: .25s $menuItemCurve;
+  z-index: 3;
 }
 
 #nav-icon span:nth-child(1) {
@@ -95,7 +95,7 @@ header a img {
 
 #nav-icon span:nth-child(2) {
   //top: calc(10% + #{$navIconGap});
-	top: 50%;
+  top: 50%;
   -webkit-transform-origin: left center;
   -moz-transform-origin: left center;
   -o-transform-origin: left center;
@@ -104,7 +104,7 @@ header a img {
 
 #nav-icon span:nth-child(3) {
   //top: calc((10% + #{$navIconGap}) * 2);
-	top: 75%;
+  top: 75%;
   -webkit-transform-origin: left center;
   -moz-transform-origin: left center;
   -o-transform-origin: left center;
@@ -112,8 +112,8 @@ header a img {
 }
 
 #nav-icon.open span {
-	top: 50%;
-	background: white;
+  top: 50%;
+  background: white;
 }
 
 #nav-icon.open span:nth-child(1) {
@@ -136,212 +136,212 @@ header a img {
 }//end
 
 #nav-overlay {
-	display: inline-block;
-	position: fixed;
-		top: 50%;
-		left: 50%;
-	width: 100%;
-	height: 100%;
-	border-radius: 100%;
-	background: rgba(0,0,0,1);
-	transform: translate(-50%, -50%) scale(0);
-	transition: transform 0.3s cubic-bezier(1, 0.26, 0, 0.73);
-	//transition: transform 0.3s cubic-bezier(0.83, 0.49, 0.04, 0.32); //test
-	z-index: 2;
+  display: inline-block;
+  position: fixed;
+    top: 50%;
+    left: 50%;
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  background: rgba(0,0,0,1);
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.3s cubic-bezier(1, 0.26, 0, 0.73);
+  //transition: transform 0.3s cubic-bezier(0.83, 0.49, 0.04, 0.32); //test
+  z-index: 2;
 }
 
 .nav-overlay-expanded {
-	transform: translate(-50%, -50%) scale(100)!important;
+  transform: translate(-50%, -50%) scale(100)!important;
 }
 
 .sidenav {
-	display: none;
-	position: fixed;
-  	top: 155px;
-		right: 0;
+  display: none;
+  position: fixed;
+    top: 155px;
+    right: 0;
   height: 100%;
-	z-index: 3;
+  z-index: 3;
 }
 
 .sidenav a {
-	display: block;
-	position: relative;
-		right: -100%;
-	padding: 7px 35px;
-	transition: right 0.25s ease-in-out;
-	font-family: 'News Cycle', sans-serif;
-	font-size: 2.3rem;
-	font-weight: 700;
-	text-align: right;
-	line-height: 35px;
-	letter-spacing: 1px;
-	text-decoration: none;
-	text-transform: uppercase;
-	color: white;
+  display: block;
+  position: relative;
+    right: -100%;
+  padding: 7px 35px;
+  transition: right 0.25s ease-in-out;
+  font-family: 'News Cycle', sans-serif;
+  font-size: 2.3rem;
+  font-weight: 700;
+  text-align: right;
+  line-height: 35px;
+  letter-spacing: 1px;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: white;
 }
 
 .sidenav-opened {
-	display: block;
+  display: block;
 }
 
 //natural breakpoints
 @media (max-width: 1079px) {
-	$navIconWidth: 70px;
-	$navIconHeight: 70px;
-	header h1 {
-		padding-right: calc(#{$navIconWidth} + 15px + #{$rspace});
-		font-size: 4rem;
-		line-height: 62px;
-	}
+  $navIconWidth: 70px;
+  $navIconHeight: 70px;
+  header h1 {
+    padding-right: calc(#{$navIconWidth} + 15px + #{$rspace});
+    font-size: 4rem;
+    line-height: 62px;
+  }
 
-	header a img {
-		width: 130px;
-	}
+  header a img {
+    width: 130px;
+  }
 
-	#nav-icon {
-		width: $navIconWidth;
-		height: $navIconHeight;
-		margin-right: $rspace;
-	}
+  #nav-icon {
+    width: $navIconWidth;
+    height: $navIconHeight;
+    margin-right: $rspace;
+  }
 
-	#nav-icon span{
-		height: 7px;
-	}
+  #nav-icon span{
+    height: 7px;
+  }
 
-	.sidenav {
-		top: 120px;
-	}
+  .sidenav {
+    top: 120px;
+  }
 
-	.sidenav a {
-		font-size: 2.1rem;
-	}
+  .sidenav a {
+    font-size: 2.1rem;
+  }
 }
 
 @media (max-width: 734px) {
-	$navIconWidth: 55px;
-	$navIconHeight: 55px;
-	$rspace: 22px;
+  $navIconWidth: 55px;
+  $navIconHeight: 55px;
+  $rspace: 22px;
 
-	header h1 {
-		padding-right: calc(#{$navIconWidth} + 12px + #{$rspace});
-		font-size: 3.2rem;
-		line-height: 41px;
-	}
+  header h1 {
+    padding-right: calc(#{$navIconWidth} + 12px + #{$rspace});
+    font-size: 3.2rem;
+    line-height: 41px;
+  }
 
-	header a img {
-		width: 110px;
-	}
+  header a img {
+    width: 110px;
+  }
 
-	#nav-icon {
-		width: $navIconWidth;
-		height: $navIconHeight;
-		margin-right: $rspace;
-	}
+  #nav-icon {
+    width: $navIconWidth;
+    height: $navIconHeight;
+    margin-right: $rspace;
+  }
 
-	#nav-icon span{
-		height: 6px;
-	}
+  #nav-icon span{
+    height: 6px;
+  }
 
-	.sidenav a {
-		font-size: 1.9rem;
-	}
+  .sidenav a {
+    font-size: 1.9rem;
+  }
 }
 
 @media (max-width: 561px) {
-	$navIconWidth: 45px;
-	$navIconHeight: 45px;
-	$rspace: 20px;
-	header h1 {
-		padding-right: calc(#{$navIconWidth} + 12px + #{$rspace});
-		font-size: 2.4rem;
-		line-height: 35px;
-		letter-spacing: -1px;
-	}
+  $navIconWidth: 45px;
+  $navIconHeight: 45px;
+  $rspace: 20px;
+  header h1 {
+    padding-right: calc(#{$navIconWidth} + 12px + #{$rspace});
+    font-size: 2.4rem;
+    line-height: 35px;
+    letter-spacing: -1px;
+  }
 
-	header a img {
-		width: 85px;
-	}
+  header a img {
+    width: 85px;
+  }
 
-	#nav-icon {
-		width: $navIconWidth;
-		height: $navIconHeight;
-		margin-right: $rspace;
-	}
+  #nav-icon {
+    width: $navIconWidth;
+    height: $navIconHeight;
+    margin-right: $rspace;
+  }
 
-	#nav-icon span{
-		height: 5px;
-	}
+  #nav-icon span{
+    height: 5px;
+  }
 
-	.sidenav {
-		top: 90px;
-	}
+  .sidenav {
+    top: 90px;
+  }
 
-	.sidenav a {
-		padding: 5px 27px;
-	}
+  .sidenav a {
+    padding: 5px 27px;
+  }
 }
 
 //footer breakpoint
 @media (max-width: 534px) {
-	.mobile-social-links {
-		display: inline-block;
-		position: relative;
-			bottom: 0px;
-			right: 0px;
-	}
+  .mobile-social-links {
+    display: inline-block;
+    position: relative;
+      bottom: 0px;
+      right: 0px;
+  }
 }
 
 @media (max-width: 461px) {
-	$navIconWidth: 45px;
-	$navIconHeight: 45px;
-	$rspace: 15px;
-	
-	header h1 {
-		padding-right: calc(#{$navIconWidth} + 10px + #{$rspace});
-		margin: 15px 0px;
-		font-size: 2.6rem;
-		line-height: 39px;
-	}
+  $navIconWidth: 45px;
+  $navIconHeight: 45px;
+  $rspace: 15px;
+  
+  header h1 {
+    padding-right: calc(#{$navIconWidth} + 10px + #{$rspace});
+    margin: 15px 0px;
+    font-size: 2.6rem;
+    line-height: 39px;
+  }
 
-	header a img {
-		display: none;
-	}
+  header a img {
+    display: none;
+  }
 
-	#nav-icon {
-		width: $navIconWidth;
-		height: $navIconHeight;
-		margin-right: $rspace;
-	}
+  #nav-icon {
+    width: $navIconWidth;
+    height: $navIconHeight;
+    margin-right: $rspace;
+  }
 
-	.sidenav a {
-		font-size: 1.6rem;
-		padding: 3px 23px;
-	}
+  .sidenav a {
+    font-size: 1.6rem;
+    padding: 3px 23px;
+  }
 }
 
 @media (max-width: 399px) {
-	$navIconWidth: 45px;
-	$navIconHeight: 45px;
-	$rspace: 15px;
+  $navIconWidth: 45px;
+  $navIconHeight: 45px;
+  $rspace: 15px;
 
-	header h1 {
-		padding-right: calc(#{$navIconWidth} + 10px + #{$rspace});
-		margin: 15px 0px;
-		margin: 10px 0px;
-		font-size: 2rem;
-	}
+  header h1 {
+    padding-right: calc(#{$navIconWidth} + 10px + #{$rspace});
+    margin: 15px 0px;
+    margin: 10px 0px;
+    font-size: 2rem;
+  }
 
-	#nav-icon {
-		width: $navIconWidth;
-		height: $navIconHeight;
-		margin-right: $rspace;
-	}
+  #nav-icon {
+    width: $navIconWidth;
+    height: $navIconHeight;
+    margin-right: $rspace;
+  }
 
-	#nav-icon span{
-		height: 4px;
-	}
+  #nav-icon span{
+    height: 4px;
+  }
 
-	.sidenav {
-		top: 80px;
-	}
+  .sidenav {
+    top: 80px;
+  }
 }

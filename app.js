@@ -18,23 +18,23 @@ app.set('view engine', 'hbs');
 app.use(express.static(__dirname + '/public'));
 
 hbs.registerHelper('getCurrentYear', () => {
-	return new Date().getFullYear();
+  return new Date().getFullYear();
 });
 
 //route for home/index page
 app.get('/', (req, res) => {
-	res.render('index.hbs');
+  res.render('index.hbs');
 });
 
 app.get('/menu', (req, res) => {
-	res.render('menu.hbs', menuImgPaths);
+  res.render('menu.hbs', menuImgPaths);
 });
 
 app.get('/events', (req, res) => {
-	res.render('events.hbs');
+  res.render('events.hbs');
 });
 
 app.listen(port, '', () => {
-	console.log(`Listening on port ${port}`);
+  console.log(`Listening on port ${port}`);
 });
 

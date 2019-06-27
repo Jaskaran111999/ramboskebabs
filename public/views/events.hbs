@@ -1,67 +1,67 @@
 <!Doctype html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<title>Events | Rambo's Kebabs</title>
-		<meta name="description" content="Check out events carried out at Rambo's Kebabs">
-		<meta name="author" content="Rambo's Kebabs">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <meta charset="utf-8">
+    <title>Events | Rambo's Kebabs</title>
+    <meta name="description" content="Check out events carried out at Rambo's Kebabs">
+    <meta name="author" content="Rambo's Kebabs">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-		<!--video js-->
-		<link href="https://vjs.zencdn.net/7.5.5/video-js.css" rel="stylesheet">
-  	<script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
+    <!--video js-->
+    <link href="https://vjs.zencdn.net/7.5.5/video-js.css" rel="stylesheet">
+    <script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
 
-		<link rel="stylesheet" href="../css/ramboskebabs.css">
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
-		<!--<link rel="stylesheet" href="../css/reset.css">-->
-	</head>
-	<body>
-		{{> header}}
-		<div id="event-overlay">
-			<span class="close"></span>
-		</div>
-		<div id="video-ctn">
-			<div id="video-event-hype" class="event-video">
-				<video class='video-js' controls preload='auto' poster='../images/hype-poster.jpg' data-setup='{}'>
-					<source src='../videos/s-video.mp4' type='video/mp4'>
-					<source src='MY_VIDEO.webm' type='video/webm'>
-					<p class='vjs-no-js'>
-						To view this video please enable JavaScript, and consider upgrading to a web browser that
-						<a href='https://videojs.com/html5-video-support/' target='_blank'>supports HTML5 video</a>
-					</p>
-				</video>
-			</div>
-			<div id="video-event-pay" class="event-video">
-				<video class='video-js' controls preload='auto' width='640' height='264' poster='../images/hype-poster.jpg' data-setup='{}'>
-					<source src='../videos/s-video.mp4' type='video/mp4'>
-					<source src='MY_VIDEO.webm' type='video/webm'>
-					<p class='vjs-no-js'>
-						To view this video please enable JavaScript, and consider upgrading to a web browser that
-						<a href='https://videojs.com/html5-video-support/' target='_blank'>supports HTML5 video</a>
-					</p>
-				</video>
-			</div>
-		</div>
-		<div id="event-bg">
-			<div id="event-hype" class="event-poster show-poster" data-video="video-event-hype">
-				<div class="poster-img">
-					<img src="../images/hype-poster.jpg">
-				</div>
-			</div>
-			<div id="event-pay" class="event-poster" data-video="video-event-pay">
-				<div class="poster-img">
-					<img src="../images/pay-poster.jpg">
-				</div>
-			</div>
-			<div id="event-null" class="event-poster">
-			</div>
-		</div>
-		<div id="event-ctn">
-			{{> eventTimeline}}
-		</div>
-		{{>footer}}
-	</body>
-	<script type="application/javascript" src="../scripts/animations.js"></script>
-	<script type="application/javascript" src="../scripts/animateEvents.js"></script>
+    <link rel="stylesheet" href="../css/ramboskebabs.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+    <!--<link rel="stylesheet" href="../css/reset.css">-->
+  </head>
+  <body>
+    {{> header}}
+    <div id="event-overlay">
+      <span class="close"></span>
+    </div>
+    <div id="video-ctn">
+      <div id="video-event-hype" class="event-video">
+        <video class='video-js' controls preload='auto' poster='../images/hype-poster.jpg' data-setup='{}'>
+          <source src='../videos/s-video.mp4' type='video/mp4'>
+          <source src='MY_VIDEO.webm' type='video/webm'>
+          <p class='vjs-no-js'>
+            To view this video please enable JavaScript, and consider upgrading to a web browser that
+            <a href='https://videojs.com/html5-video-support/' target='_blank'>supports HTML5 video</a>
+          </p>
+        </video>
+      </div>
+      <div id="video-event-pay" class="event-video">
+        <video class='video-js' controls preload='auto' width='640' height='264' poster='../images/hype-poster.jpg' data-setup='{}'>
+          <source src='../videos/s-video.mp4' type='video/mp4'>
+          <source src='MY_VIDEO.webm' type='video/webm'>
+          <p class='vjs-no-js'>
+            To view this video please enable JavaScript, and consider upgrading to a web browser that
+            <a href='https://videojs.com/html5-video-support/' target='_blank'>supports HTML5 video</a>
+          </p>
+        </video>
+      </div>
+    </div>
+    <div id="event-bg">
+      <div id="event-hype" class="event-poster show-poster" data-video="video-event-hype">
+        <div class="poster-img">
+          <img src="../images/hype-poster.jpg">
+        </div>
+      </div>
+      <div id="event-pay" class="event-poster" data-video="video-event-pay">
+        <div class="poster-img">
+          <img src="../images/pay-poster.jpg">
+        </div>
+      </div>
+      <div id="event-null" class="event-poster">
+      </div>
+    </div>
+    <div id="event-ctn">
+      {{> eventTimeline}}
+    </div>
+    {{>footer}}
+  </body>
+  <script type="application/javascript" src="../scripts/animations.js"></script>
+  <script type="application/javascript" src="../scripts/animateEvents.js"></script>
   <script src='https://vjs.zencdn.net/7.5.5/video.js'></script>
 </html>
