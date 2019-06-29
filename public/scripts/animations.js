@@ -11,7 +11,10 @@ var copyrightCtn = document.getElementById("copyright");
 var menuCategories = document.getElementsByClassName('menu-category');
 var menuItemsCtn = document.getElementsByClassName('menu-items');
 var menuItems = document.getElementsByClassName('menu-item');
-var itemImgCtn = document.getElementById('item-img');
+
+//menu images
+var itemImgCtn = document.getElementsByClassName('item-img-ctn')[0];
+var itemImg = document.getElementById('item-img');
 
 function animateMenuItems(s) {
   //Reset all menu items from selected category
@@ -22,12 +25,25 @@ function animateMenuItems(s) {
   event.target.classList.add('item-is-selected');
   
   //get the menu item src and srcset
-  var imgPath = event.target.getAttribute("data-imgpath");
-  var imgSrcSet = event.target.getAttribute("data-srcSetPath");
+  var webpSizes = event.target.getAttribute("data-webpSizes");
+  var webpImgPath = event.target.getAttribute("data-imgpath-webp");
+  var webpSet = event.target.getAttribute("data-srcSetPath-webp");
 
-  //change src and srcset
-  itemImgCtn.src = imgPath;
-  itemImgCtn.srcset = imgSrcSet;
+  var pngSizes = event.target.getAttribute("data-pngSizes");
+  var pngImgPath = event.target.getAttribute("data-imgpath-png");
+  var pngSet = event.target.getAttribute("data-srcSetPath-png");
+
+  var imgAlt = event.target.getAttribute("data-imgAlt");
+
+  var webpSource = itemImgCtn.children[0];
+  var pngSource = itemImgCtn.children[1];
+
+  //change sizes src and srcset of sources
+  webpSource.sizes = webpSizes;
+  webpSource.srcset = webpSet;
+  pngSource.sizes = pngSizes;
+  pngSource.srcset = pngSet;
+  itemImg.alt = imgAlt;
 }
 
 function animateMenuCategories(e) {
