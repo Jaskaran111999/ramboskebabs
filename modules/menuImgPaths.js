@@ -15,8 +15,7 @@ var menuImgPaths = {
     fSnackpack: { 
       alt: 'Falafel Snackpack', 
       webp: {
-        sizes: '100vw', 
-        //sizes: '(max-width: 200px) 200px, (max-width: 550px) 550px, (max-width: 798px) 798px, (max-width: 969px) 969px', 
+        sizes: '(max-width: 375px) 200px, (max-width: 775px) 550px, (max-width: 935px) 798px, (max-width: 969px) 969px, 969px', 
         //sizes: '(max-width: 969px) 969px, (max-width: 798px) 798px, (max-width: 550px) 550px, (max-width: 200px) 200px', 
         src: '../images/img-snackpack-falafel_dw64bn_c_scale,w_798.webp',
         srcset: '../images/img-snackpack-falafel_dw64bn_c_scale,w_969.webp 969w, ../images/img-snackpack-falafel_dw64bn_c_scale,w_798.webp 798w, ../images/img-snackpack-falafel_dw64bn_c_scale,w_550.webp 550w, ../images/img-snackpack-falafel_dw64bn_c_scale,w_200.webp 200w'
