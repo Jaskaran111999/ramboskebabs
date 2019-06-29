@@ -43,7 +43,6 @@ function animateMenuItems(s) {
   webpSource.srcset = webpSet;
   pngSource.sizes = pngSizes;
   pngSource.srcset = pngSet;
-  itemImg.sizes = webpSizes;
   itemImg.alt = imgAlt;
 }
 
