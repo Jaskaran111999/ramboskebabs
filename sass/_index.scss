@@ -76,7 +76,8 @@ body {
   line-height: 45px;
   font-size: 1.6rem;
   text-decoration: none;
-  color: #4ca82e;
+  color: white;
+  //color: #4ca82e;
 }
 
 .indexbtns:nth-child(2) {
@@ -88,7 +89,8 @@ body {
 }
 
 .indexbtns:hover {
-  color: #f0b33d;
+  //color: #f0b33d;
+  color: #4ca82e;
 }
 
 //bulma button class fix
