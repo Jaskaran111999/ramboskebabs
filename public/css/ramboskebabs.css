@@ -1852,11 +1852,13 @@ body {
   -webkit-animation: timelineEventAnim 0.3s cubic-bezier(0.12, 0.83, 0.88, 0.91) 0s 1 alternate forwards;
   animation: timelineEventAnim 0.3s cubic-bezier(0.12, 0.83, 0.88, 0.91) 0s 1 alternate forwards; }
 
+/*
 .show-poster {
   display: block;
-  -webkit-animation: eventPosterAnim 0.3s cubic-bezier(0.12, 0.83, 0.88, 0.91) 0s 1 alternate forwards;
-  animation: eventPosterAnim 0.3s cubic-bezier(0.12, 0.83, 0.88, 0.91) 0s 1 alternate forwards; }
-
+  -webkit-animation: eventPosterAnim .3s $menuItemCurve 0s 1 alternate forwards;
+  animation: eventPosterAnim .3s $menuItemCurve 0s 1 alternate forwards;
+}
+*/
 @keyframes timelineEventAnim {
   100% {
     color: gold; } }

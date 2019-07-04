@@ -1,13 +1,14 @@
 //variables
-var events = document.getElementsByClassName("event-poster");
 var timelineEvents = document.getElementsByClassName("event__content");
-var activePoster = document.getElementsByClassName("show-poster")[0];
+//var activePoster = document.getElementsByClassName("show-poster")[0];
 
 //video overlay
 var overlay = document.getElementById("event-overlay");
 var videoCtn = document.getElementById("video-ctn");
 var videos = document.getElementsByClassName("event-video");
 var closeBtn = document.getElementsByClassName("close")[0];
+
+const _P = document.getElementsByClassName("poster-img");
 
 const _C = document.querySelector('#event-bg'), 
   N = _C.children.length, NF = 30, 
@@ -19,34 +20,82 @@ const _C = document.querySelector('#event-bg'),
 
 let i = 0, y0 = null, locked = false, w, ini, fin, rID = null, anf, n;
 
-function closeVideo(e) {
-  
-  //hide overlay and video-ctn
-  overlay.classList.remove("show");
-  videoCtn.classList.remove("show");
-
-  for(var i = 0; i < videos.length ; i++) {
-
-    if(videos[i].classList.contains("show")) {
-      videos[i].children[0].children[0].pause();
-    }
-
-    videos[i].classList.remove("show");
-
-  }
-
-  //remove onclick listener because gets added again
-  closeBtn.removeEventListener('click', closeVideo);
+if (window.PointerEvent) {
+  var pEvent = true;
+} else {
+  var pEvent = false;
 }
 
-function animateVideo(e) {
+var down_start = {};
+
+function closeVideo(e) {
+
+  //if pointer/mouse/touch does not move
+  if(e.clientX == down_start.x && e.clientY == down_start.y) {
+
+    //hide overlay and video-ctn
+    overlay.classList.remove("show");
+    videoCtn.classList.remove("show");
+
+    for(var i = 0; i < videos.length ; i++) {
+
+      if(videos[i].classList.contains("show")) {
+        videos[i].children[0].children[0].pause();
+      }
+
+      videos[i].classList.remove("show");
+
+    }
+
+    //remove event listeners because gets added again
+    if(pEvent === true) {
+
+      closeBtn.removeEventListener('pointerup', closeVideo);
+      closeBtn.removeEventListener('pointerdown', detectMove);
+    
+    } else if(pEvent === false) {
+      closeBtn.removeEventListener('mouseup', closeVideo);
+      closeBtn.removeEventListener('mousedown', detectMove);
+      closeBtn.removeEventListener('touchend', closeVideo);
+      closeBtn.removeEventListener('touchstart', detectMove);
+    }
+
+  }
   
+}
+
+function detectMove(e) {
+  down_start = {
+    x: e.clientX, 
+    y: e.clientY
+  };
+
+  if(pEvent === true) {
+
+    closeBtn.addEventListener('pointerup', closeVideo, false);
+  
+  } else if(pEvent === false) {
+    closeBtn.addEventListener('mouseup', closeVideo, false);
+    closeBtn.addEventListener('touchend', closeVideo, false);
+  }
+
+}
+
+function animateVideo(index) {
+
   //display overlay and then video-ctn
   overlay.classList.add("show");
   videoCtn.classList.add("show");
-  document.getElementById(e.path[2].dataset.video).classList.add("show");
+  document.getElementById(_C.children[index].dataset.video).classList.add("show");
   
-  closeBtn.addEventListener('click', closeVideo);
+  if(pEvent === true) {
+
+    closeBtn.addEventListener('pointerdown', detectMove, false);
+  
+  } else if(pEvent === false) {
+    closeBtn.addEventListener('mousedown', detectMove, false);
+    closeBtn.addEventListener('touchstart', detectMove, false);
+  }
 }
 
 function animateEvents(e) {
@@ -56,16 +105,19 @@ function animateEvents(e) {
     timelineEvents[i].classList.remove("timelineEvent-is-selected");
   };
 
+  /*
   //reset event posters selection
-  for(var i = 0; i < events.length ; i++) {
-    events[i].classList.remove("show-poster");
+  for(var i = 0; i < _P.length ; i++) {
+    _P[i].classList.remove("show-poster");
   };
+  */
 
+  //console.log(`${e} ---- ${e.path[1]}`);
   //add class selected timelineEvent and event-poster
   e.path[1].classList.add("timelineEvent-is-selected");   //event content gets the class
 
-  activePoster = document.getElementById(e.path[1].dataset.eventbg);
-  activePoster.classList.add("show-poster");
+  //activePoster = document.getElementById(e.path[1].dataset.eventbg);
+  //activePoster.classList.add("show-poster");
 
   //add event listener to the new poster
   activePoster.addEventListener('click', animateVideo);
@@ -89,13 +141,29 @@ function ani(cf = 0) {
 };
 
 function unify(e) {
-  return e.changedTouches ? e.changedTouches[0] : e
+  return e.changedTouches ? e.changedTouches[0] : e;
 };
 
 function lock(e) {
   e.preventDefault();
   y0 = unify(e).clientY;
 	locked = true
+
+  if(pEvent === true) {
+
+    _C.addEventListener('pointermove', drag, false);
+    window.addEventListener('pointerup', move, false);
+  
+  } else if(pEvent === false) {
+  
+    _C.addEventListener('mousemove', drag, false);
+    _C.addEventListener('mouseup', move, false);
+
+    _C.addEventListener('touchmove', drag, false);
+    _C.addEventListener('touchend', move, false);
+    
+  }
+
 };
 
 function drag(e) {
@@ -103,31 +171,51 @@ function drag(e) {
 	
   if(locked) {
     let dy = unify(e).clientY - y0, f = +(dy/w).toFixed(2);
-		
     _C.style.setProperty('--i', i - f)
   }
+
 };
 
 function move(e) {
   e.preventDefault();
   if(locked) {
     let dy = unify(e).clientY - y0, 
-        s = Math.sign(dy), 
-        f = +(s*dy/w).toFixed(2);
-		
-    ini = i - s*f;
+      s = Math.sign(dy), 
+      f = +(s*dy/w).toFixed(2);
 
-    if((i > 0 || s < 0) && (i < N - 1 || s > 0) && f > .2) {
-      i -= s;
-      f = 1 - f
+    if(f > 0) {
+      ini = i - s*f;
+
+      if((i > 0 || s < 0) && (i < N - 1 || s > 0) && f > .2) {
+        i -= s;
+        f = 1 - f
+      }
+
+      fin = i;
+      anf = Math.round(f*NF);
+      n = 2 + Math.round(f)
+      ani();
+      y0 = null;
+      locked = false;
+      _C.children[i].click;
+    } else if(f == 0) {
+      animateVideo(i);
     }
+		
+    if(pEvent === true) {
 
-    fin = i;
-		anf = Math.round(f*NF);
-		n = 2 + Math.round(f)
-    ani();
-    y0 = null;
-    locked = false;
+      _C.removeEventListener('pointermove', drag, false);
+      window.removeEventListener('pointerup', move, false);
+    
+    } else if(pEvent === false) {
+    
+      _C.removeEventListener('mousemove', drag, false);
+      _C.removeEventListener('touchmove', drag, false);
+
+      window.removeEventListener('mouseup', move, false);
+      window.removeEventListener('touchend', move, false);
+      
+    }
   }
 };
 
@@ -136,6 +224,7 @@ function size() {
 };
 
 function animate() {
+
 
   //for first time
   //activePoster.addEventListener('click', animateVideo);
@@ -150,21 +239,17 @@ function animate() {
   }
   */
 
-
-
   size();
   _C.style.setProperty('--n', N);
 
   addEventListener('resize', size, false);
 
-  _C.addEventListener('mousedown', lock, false);
-  _C.addEventListener('touchstart', lock, false);
-
-  _C.addEventListener('mousemove', drag, false);
-  _C.addEventListener('touchmove', drag, false);
-
-  _C.addEventListener('mouseup', move, false);
-  _C.addEventListener('touchend', move, false);
+  if(pEvent === true) {
+    _C.addEventListener('pointerdown', lock, false);
+  } else if(pEvent === false) {
+    _C.addEventListener('mousedown', lock, false);
+    _C.addEventListener('touchstart', lock, false);
+  }
 
 }
 

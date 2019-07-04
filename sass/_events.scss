@@ -237,11 +237,13 @@ $eventNameFSize: 1.2rem;
   animation: timelineEventAnim .3s $menuItemCurve 0s 1 alternate forwards;
 }
 
+/*
 .show-poster {
   display: block;
   -webkit-animation: eventPosterAnim .3s $menuItemCurve 0s 1 alternate forwards;
   animation: eventPosterAnim .3s $menuItemCurve 0s 1 alternate forwards;
 }
+*/
 
 @keyframes timelineEventAnim {
   100% {
