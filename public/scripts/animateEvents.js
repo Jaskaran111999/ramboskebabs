@@ -1,5 +1,7 @@
 //variables
-var timelineEvents = document.getElementsByClassName("event__content");
+var timelineEvents = document.getElementsByClassName("timeline__event");
+var activePoster = document.getElementsByClassName("active-poster");
+var posters = document.getElementsByClassName("poster-img");
 
 //video overlay
 var overlay = document.getElementById("event-overlay");
@@ -48,37 +50,22 @@ function closeVideo(e) {
 
     }
 
-    //remove event listeners because gets added again
-    if(pEvent === true) {
-
-      closeBtn.removeEventListener('pointerup', closeVideo, false);
-      closeBtn.removeEventListener('pointerdown', detectMove, false);
-    
-    } else if(pEvent === false) {
-      closeBtn.removeEventListener('mouseup', closeVideo, false);
-      closeBtn.removeEventListener('mousedown', detectMove, false);
-      closeBtn.removeEventListener('touchend', closeVideo, false);
-      closeBtn.removeEventListener('touchstart', detectMove, false);
-    }
+    closeBtn.removeEventListener('click', closeVideo, false);
+    closeBtn.removeEventListener('touchend', closeVideo, false);
+    closeBtn.removeEventListener('touchstart', detectMove, false);
 
   }
   
 }
 
 function detectMove(e) {
+  e.preventDefault();
   down_start = {
     x: e.clientX, 
     y: e.clientY
   };
 
-  if(pEvent === true) {
-
-    closeBtn.addEventListener('pointerup', closeVideo, false);
-  
-  } else if(pEvent === false) {
-    closeBtn.addEventListener('mouseup', closeVideo, false);
-    closeBtn.addEventListener('touchend', closeVideo, false);
-  }
+  closeBtn.addEventListener('touchend', closeVideo, false);
 
 }
 
@@ -89,14 +76,8 @@ function animateVideo(index) {
   videoCtn.classList.add("show");
   document.getElementById(_C.children[index].dataset.video).classList.add("show");
 
-  if(pEvent === true) {
-
-    closeBtn.addEventListener('pointerdown', detectMove, false);
-
-  } else if(pEvent === false) {
-    closeBtn.addEventListener('click', closeVideo, false);
-    closeBtn.addEventListener('touchstart', detectMove, false);
-  }
+  closeBtn.addEventListener('click', closeVideo, false);
+  closeBtn.addEventListener('touchstart', detectMove, false);
 }
 
 function animateEvents(e) {
@@ -106,21 +87,30 @@ function animateEvents(e) {
     timelineEvents[i].classList.remove("timelineEvent-is-selected");
   };
 
-  /*
-  //reset event posters selection
-  for(var i = 0; i < _P.length ; i++) {
-    _P[i].classList.remove("show-poster");
-  };
-  */
-
   //add class selected timelineEvent and event-poster
   e.path[2].classList.add("timelineEvent-is-selected");   //event content gets the class
 
-  //activePoster = document.getElementById(e.path[1].dataset.eventbg);
-  //activePoster.classList.add("show-poster");
+  for(var i = 0; i < posters.length; i++) {
+    //find initial active poster before click
+    if(posters[i].classList.contains("active-poster")) {
+      var iniIndex = i;
+      console.log(iniIndex);
+    }
+    posters[i].classList.remove("active-poster");
+  }
 
-  //add event listener to the new poster
-  //activePoster.addEventListener('click', animateVideo);
+  activePoster = document.getElementById(e.path[1].dataset.eventbg);
+  activePoster.classList.add("active-poster");
+
+  //final active poster to be displayed
+  var finIndex = activePoster.dataset.index;
+
+  //animate using bounce ani func
+  ini = iniIndex;
+  fin = finIndex;
+  anf = Math.round(.21*NF);
+  n = 2 + Math.round(.21)
+  ani();
 
 }
 
@@ -197,7 +187,17 @@ function move(e) {
       ani();
       y0 = null;
       locked = false;
-      _C.children[i].click;
+
+      //reset timeline event selection
+      for(var i = 0; i < timelineEvents.length ; i++) {
+        timelineEvents[i].classList.remove("timelineEvent-is-selected");
+      };
+
+      var activePosterIndex = _C.style.--i;
+
+      //add class selected timelineEvent and event-poster
+      //e.path[2].classList.add("timelineEvent-is-selected");   //event content gets the class
+
     } else if(f == 0) {
       animateVideo(i);
     }
