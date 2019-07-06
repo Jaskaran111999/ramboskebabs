@@ -1759,6 +1759,7 @@ body {
   -webkit-transform: translateY(calc(var(--i, 0)/var(--n)*-100%));
   -moz-transform: translateY(calc(var(--i, 0)/var(--n)*-100%));
   -o-transform: translateY(calc(var(--i, 0)/var(--n)*-100%));
+  touch-action: none;
   overflow: hidden; }
 
 /*

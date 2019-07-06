@@ -1,6 +1,5 @@
 //variables
 var timelineEvents = document.getElementsByClassName("event__content");
-//var activePoster = document.getElementsByClassName("show-poster")[0];
 
 //video overlay
 var overlay = document.getElementById("event-overlay");
@@ -30,6 +29,8 @@ var down_start = {};
 
 function closeVideo(e) {
 
+  e.preventDefault();
+
   //if pointer/mouse/touch does not move
   if(e.clientX == down_start.x && e.clientY == down_start.y) {
 
@@ -50,14 +51,14 @@ function closeVideo(e) {
     //remove event listeners because gets added again
     if(pEvent === true) {
 
-      closeBtn.removeEventListener('pointerup', closeVideo);
-      closeBtn.removeEventListener('pointerdown', detectMove);
+      closeBtn.removeEventListener('pointerup', closeVideo, false);
+      closeBtn.removeEventListener('pointerdown', detectMove, false);
     
     } else if(pEvent === false) {
-      closeBtn.removeEventListener('mouseup', closeVideo);
-      closeBtn.removeEventListener('mousedown', detectMove);
-      closeBtn.removeEventListener('touchend', closeVideo);
-      closeBtn.removeEventListener('touchstart', detectMove);
+      closeBtn.removeEventListener('mouseup', closeVideo, false);
+      closeBtn.removeEventListener('mousedown', detectMove, false);
+      closeBtn.removeEventListener('touchend', closeVideo, false);
+      closeBtn.removeEventListener('touchstart', detectMove, false);
     }
 
   }
@@ -87,13 +88,13 @@ function animateVideo(index) {
   overlay.classList.add("show");
   videoCtn.classList.add("show");
   document.getElementById(_C.children[index].dataset.video).classList.add("show");
-  
+
   if(pEvent === true) {
 
     closeBtn.addEventListener('pointerdown', detectMove, false);
-  
+
   } else if(pEvent === false) {
-    closeBtn.addEventListener('mousedown', detectMove, false);
+    closeBtn.addEventListener('click', closeVideo, false);
     closeBtn.addEventListener('touchstart', detectMove, false);
   }
 }
@@ -112,15 +113,14 @@ function animateEvents(e) {
   };
   */
 
-  //console.log(`${e} ---- ${e.path[1]}`);
   //add class selected timelineEvent and event-poster
-  e.path[1].classList.add("timelineEvent-is-selected");   //event content gets the class
+  e.path[2].classList.add("timelineEvent-is-selected");   //event content gets the class
 
   //activePoster = document.getElementById(e.path[1].dataset.eventbg);
   //activePoster.classList.add("show-poster");
 
   //add event listener to the new poster
-  activePoster.addEventListener('click', animateVideo);
+  //activePoster.addEventListener('click', animateVideo);
 
 }
 
@@ -225,19 +225,13 @@ function size() {
 
 function animate() {
 
-
-  //for first time
-  //activePoster.addEventListener('click', animateVideo);
-
-  /*
   //add event listeners on timeline events 
   for(var i = 0; i < timelineEvents.length ; i++) {
     timelineEvents[i].addEventListener('click', function(e) {
-      activePoster.removeEventListener('click', animateVideo);
+      //activePoster.removeEventListener('click', animateVideo);
       animateEvents(e);
     }, false);
   }
-  */
 
   size();
   _C.style.setProperty('--n', N);
