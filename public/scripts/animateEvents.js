@@ -2,6 +2,7 @@
 var timelineEvents = document.getElementsByClassName("timeline__event");
 var activePoster = document.getElementsByClassName("active-poster");
 var posters = document.getElementsByClassName("poster-img");
+var activePosterIndex;
 
 //video overlay
 var overlay = document.getElementById("event-overlay");
@@ -94,7 +95,6 @@ function animateEvents(e) {
     //find initial active poster before click
     if(posters[i].classList.contains("active-poster")) {
       var iniIndex = i;
-      console.log(iniIndex);
     }
     posters[i].classList.remove("active-poster");
   }
@@ -110,7 +110,10 @@ function animateEvents(e) {
   fin = finIndex;
   anf = Math.round(.21*NF);
   n = 2 + Math.round(.21)
-  ani();
+  ani(function() {
+    // callback does nothing
+    return true;
+  });
 
 }
 
@@ -119,15 +122,38 @@ function stopAni() {
   rID = null
 };
 
-function ani(cf = 0) {
+function completeAnimation() {
+
+  activePosterIndex = _C.style.getPropertyValue('--i');
+
+  //reset timeline event selection
+  for(var j = 0; j < timelineEvents.length ; j++) {
+    timelineEvents[j].classList.remove("timelineEvent-is-selected");
+  };
+
+  //add class selected timelineEvent and event-poster
+  timelineEvents[activePosterIndex].classList.add("timelineEvent-is-selected");   //event content gets the class
+
+  for(var j = 0; j < posters.length; j++) {
+    posters[j].classList.remove("active-poster");
+  }
+
+  posters[activePosterIndex].classList.add("active-poster");
+
+}
+
+function ani(callback, cf = 0) {
+
   _C.style.setProperty('--i', ini + (fin - ini)*TFN['bounce-out'](cf/anf));
 
   if(cf === anf) {
     stopAni();
-    return
+    callback();
+    return true;
   }
 
-  rID = requestAnimationFrame(ani.bind(this, ++cf))
+  rID = requestAnimationFrame(ani.bind(this, callback, ++cf))
+
 };
 
 function unify(e) {
@@ -179,29 +205,34 @@ function move(e) {
       if((i > 0 || s < 0) && (i < N - 1 || s > 0) && f > .2) {
         i -= s;
         f = 1 - f
+
+        fin = i;
+        anf = Math.round(f*NF);
+        n = 2 + Math.round(f)
+
+        //poster to be changed
+        ani(completeAnimation);
+      } else {
+      
+        fin = i;
+        anf = Math.round(f*NF);
+        n = 2 + Math.round(f)
+
+        //drag same poster
+        ani(function() {
+          //do nothing additional
+          return true;
+        });
+
       }
 
-      fin = i;
-      anf = Math.round(f*NF);
-      n = 2 + Math.round(f)
-      ani();
-      y0 = null;
       locked = false;
-
-      //reset timeline event selection
-      for(var i = 0; i < timelineEvents.length ; i++) {
-        timelineEvents[i].classList.remove("timelineEvent-is-selected");
-      };
-
-      var activePosterIndex = _C.style.--i;
-
-      //add class selected timelineEvent and event-poster
-      //e.path[2].classList.add("timelineEvent-is-selected");   //event content gets the class
 
     } else if(f == 0) {
       animateVideo(i);
     }
-		
+
+    //remove move and end event listeners
     if(pEvent === true) {
 
       _C.removeEventListener('pointermove', drag, false);
@@ -216,6 +247,7 @@ function move(e) {
       window.removeEventListener('touchend', move, false);
       
     }
+		
   }
 };
 
@@ -228,7 +260,6 @@ function animate() {
   //add event listeners on timeline events 
   for(var i = 0; i < timelineEvents.length ; i++) {
     timelineEvents[i].addEventListener('click', function(e) {
-      //activePoster.removeEventListener('click', animateVideo);
       animateEvents(e);
     }, false);
   }

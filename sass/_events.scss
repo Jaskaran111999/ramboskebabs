@@ -115,6 +115,7 @@ $eventNameFSize: 1.2rem;
 }
 
 #event-bg {
+  --i: 0;
   --n: 2;
   display: flex;
   flex-direction: column;
@@ -243,8 +244,8 @@ $eventNameFSize: 1.2rem;
 
 .active-poster {
   display: block;
-  -webkit-animation: eventPosterAnim .3s $menuItemCurve 0s 1 alternate forwards;
-  animation: eventPosterAnim .3s $menuItemCurve 0s 1 alternate forwards;
+  //-webkit-animation: eventPosterAnim .3s $menuItemCurve 0s 1 alternate forwards;
+  //animation: eventPosterAnim .3s $menuItemCurve 0s 1 alternate forwards;
 }
 
 @keyframes timelineEventAnim {

@@ -1751,6 +1751,7 @@ body {
   text-align: center; }
 
 #event-bg {
+  --i: 0;
   --n: 2;
   display: flex;
   flex-direction: column;
@@ -1857,9 +1858,7 @@ body {
   animation: timelineEventAnim 0.3s cubic-bezier(0.12, 0.83, 0.88, 0.91) 0s 1 alternate forwards; }
 
 .active-poster {
-  display: block;
-  -webkit-animation: eventPosterAnim 0.3s cubic-bezier(0.12, 0.83, 0.88, 0.91) 0s 1 alternate forwards;
-  animation: eventPosterAnim 0.3s cubic-bezier(0.12, 0.83, 0.88, 0.91) 0s 1 alternate forwards; }
+  display: block; }
 
 @keyframes timelineEventAnim {
   100% {
