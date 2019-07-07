@@ -277,6 +277,7 @@ $menuItemCurve: cubic-bezier(0.12, 0.83, 0.88, 0.91);
 
   .menu-categories {
     top: 0%;
+    text-align: right;
     width: 194px;
   }
 }
@@ -328,6 +329,10 @@ $menuItemCurve: cubic-bezier(0.12, 0.83, 0.88, 0.91);
     width: 100%;
   }
 
+  .menu-items {
+    padding-right: 18px;
+  }
+
   #item-img {
     min-width: 270px;
     top: 70%;
@@ -338,7 +343,7 @@ $menuItemCurve: cubic-bezier(0.12, 0.83, 0.88, 0.91);
   .menu-categories {
     width: 126px;
     padding-left: 15px;
-    padding-right: 10px;
+    padding-right: 25px;
   }
 
   .menu-category {
@@ -347,15 +352,13 @@ $menuItemCurve: cubic-bezier(0.12, 0.83, 0.88, 0.91);
   }
 
   .menu-items {
+    padding-right: 15px;
     line-height: 26px;
+    font-size: 1.2rem;
   }
 
   .category-is-selected {
     font-size: 1.3rem;
-  }
-
-  .menu-items {
-    font-size: 1.2rem;
   }
 
   .item-is-selected {
