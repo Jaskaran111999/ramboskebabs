@@ -128,7 +128,6 @@ function animate() {
     menuCategories[i].addEventListener('mouseup', detectMove.bind(null, animateMenuCategories), false);
   }
 
-
   //Add onclick event listeners on menu items of selected category
   for(i = 0; i < menuItems.length; i++) {
     menuItems[i].addEventListener('touchstart', lock, false);
