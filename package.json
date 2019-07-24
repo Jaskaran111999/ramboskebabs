@@ -15,7 +15,7 @@
   "dependencies": {
     "bulma-timeline": "^3.0.1",
     "express": "^4.16.4",
-    "hbs": "^4.0.1"
+    "hbs": "^4.0.4"
   },
   "devDependencies": {
     "bulma": "^0.7.2",

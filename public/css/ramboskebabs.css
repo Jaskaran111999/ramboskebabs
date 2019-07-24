@@ -1276,6 +1276,64 @@ body {
   padding-left: 1em;
   padding-right: 1em; }
 
+#popup-overlay {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 2;
+  visibility: hidden;
+  opacity: 0;
+  overflow: hiden;
+  transition: .64s ease-in-out; }
+
+.popup {
+  display: flex;
+  position: relative;
+  bottom: -100vw;
+  right: -100vh;
+  align-items: center;
+  max-width: 800px;
+  width: 30%;
+  height: fit-content;
+  padding: 5px;
+  background-color: #fff;
+  transform: rotate(32deg);
+  transition: .64s ease-in-out; }
+  .popup img {
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: auto; }
+
+.popup-is-visible {
+  bottom: 0;
+  right: 0;
+  transform: rotate(0); }
+
+#closepopup {
+  position: absolute;
+  right: -1rem;
+  top: -1rem;
+  width: 3rem;
+  height: 3rem;
+  font-size: .875rem;
+  font-weight: 300;
+  font-family: "News Cycle", sans-serif;
+  border-radius: 100%;
+  background-color: #ff5201;
+  z-index: 4;
+  color: #fff;
+  line-height: 3rem;
+  text-align: center;
+  cursor: pointer;
+  text-decoration: none; }
+
 @media (min-aspect-ratio: 16 / 9) {
   #bg-video video {
     width: 100%;
@@ -1318,7 +1376,9 @@ body {
     width: 29px;
     height: 29px; }
   .indexbtns span {
-    margin-left: 10px; } }
+    margin-left: 10px; }
+  .popup {
+    width: 40%; } }
 
 @media (max-width: 734px) {
   .tline h2 {
@@ -1335,7 +1395,16 @@ body {
     width: 24px;
     height: 24px; }
   .indexbtns span {
-    margin-left: 8px; } }
+    margin-left: 8px; }
+  .popup {
+    width: 45%; }
+  #closepopup {
+    top: -0.8rem;
+    right: -0.9rem;
+    width: 2.2rem;
+    height: 2.2rem;
+    font-size: 0.9rem;
+    line-height: 2rem; } }
 
 @media (max-width: 561) {
   .tline h2 {
@@ -1381,7 +1450,9 @@ body {
     margin-left: 0px; }
   .image.is-48x48 {
     width: 34px;
-    height: 34px; } }
+    height: 34px; }
+  .popup {
+    width: 70%; } }
 
 .bg {
   background-image: url("../images/bgImages/bg2560x1054.webp"), url("../images/original/bgImages/bg2560x1054.png");

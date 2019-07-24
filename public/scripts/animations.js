@@ -16,6 +16,11 @@ var menuItems = document.getElementsByClassName('menu-item');
 var itemImgCtn = document.getElementsByClassName('item-img-ctn')[0];
 var itemImg = document.getElementById('item-img');
 
+//popup
+var popupOverlay = document.getElementById('popup-overlay');
+var popup = document.getElementsByClassName('popup')[0];
+var closePopup = document.getElementById('closepopup');
+
 var down_start = {};
 
 function detectMove(callback) {
@@ -113,6 +118,18 @@ function animateNav() {
 }
 
 function animate() {
+
+  setTimeout(() => {
+    popupOverlay.style.opacity = "1";
+    popupOverlay.style.visibility = "visible";
+    popup.classList.add("popup-is-visible");
+
+    closePopup.addEventListener("click", () => {
+      popupOverlay.style.opacity = "0";
+      popupOverlay.style.visibility = "hidden";
+      popup.classList.remove("pop-is-visible");
+    }, false);
+  }, 300);
 
   //Animate Hamburger Menu
   navIcon.addEventListener('touchstart', lock, false);
