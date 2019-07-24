@@ -1,4 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=News+Cycle:400,700");
+@import url("https://fonts.googleapis.com/css?family=Bungee+Inline&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Piedra&display=swap");
 @keyframes spinAround {
   from {
     transform: rotate(0deg); }
@@ -1220,40 +1222,42 @@ body {
 
 .tline {
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top: 80%;
+  left: 36%;
   min-width: fit-content;
   transform: translate(-50%, -50%);
   z-index: 1; }
 
 .tline h2, h3 {
   margin: 0px;
-  font-family: 'News Cycle', sans-serif;
-  font-weight: 700;
-  text-transform: uppercase;
   text-align: center; }
 
 .tline h2 {
-  font-size: 5.2rem;
-  line-height: 77px;
-  color: white; }
-
-.tline h3 {
-  font-size: 4.9rem;
-  line-height: 74px;
+  font-family: 'Bungee Inline', cursive;
+  font-weight: 400;
+  font-size: 7rem;
+  line-height: 88px;
   color: #ff5201; }
 
-.btn-flex-ctn {
+.tline h3 {
+  margin-top: 10px;
+  font-family: 'Piedra', cursive;
+  font-weight: 400;
+  font-size: 5.3rem;
+  line-height: 95px;
+  color: #ecb656; }
+
+.btn-ctn {
   display: flex;
-  flex-direction: row; }
+  flex-direction: row;
+  padding-top: 15px; }
 
 .indexbtns {
-  position: relative;
-  top: 20px;
   width: fit-content;
   height: fit-content;
+  border: solid 1.5px white;
   border-radius: 35px;
-  font-family: "News Cycle", sans-serif;
+  font-family: "Bungee Inline", cursive;
   line-height: 45px;
   font-size: 1.6rem;
   text-decoration: none;
@@ -1269,8 +1273,8 @@ body {
   color: #4ca82e; }
 
 .image.is-48x48 {
-  width: 33px;
-  height: 33px; }
+  width: 35px;
+  height: 35px; }
 
 .button {
   padding-left: 1em;
@@ -1364,17 +1368,17 @@ body {
 @media (max-width: 1079px) {
   .tline h2 {
     font-size: 4rem;
-    line-height: 70px;
-    color: white; }
+    line-height: 52px; }
   .tline h3 {
-    font-size: 3.78rem;
-    line-height: 60px;
-    color: #ff5201; }
+    margin-top: 5px;
+    font-size: 3.1rem;
+    line-height: 56px; }
   .indexbtns {
-    font-size: 1.34rem; }
+    font-size: 1rem;
+    line-height: 35px; }
   .image.is-48x48 {
-    width: 29px;
-    height: 29px; }
+    width: 27px;
+    height: 27px; }
   .indexbtns span {
     margin-left: 10px; }
   .popup {
@@ -1383,17 +1387,17 @@ body {
 @media (max-width: 734px) {
   .tline h2 {
     font-size: 3rem;
-    line-height: 45px;
-    color: white; }
+    line-height: 38px; }
   .tline h3 {
-    font-size: 2.78rem;
-    line-height: 45px;
-    color: #ff5201; }
+    font-size: 2.32rem;
+    line-height: 45px; }
   .indexbtns {
-    font-size: 1.1rem; }
+    font-size: 0.8rem;
+    line-height: 27px;
+    border: solid 0.5px #fff; }
   .image.is-48x48 {
-    width: 24px;
-    height: 24px; }
+    width: 22px;
+    height: 22px; }
   .indexbtns span {
     margin-left: 8px; }
   .popup {
@@ -1406,51 +1410,46 @@ body {
     font-size: 0.9rem;
     line-height: 2rem; } }
 
-@media (max-width: 561) {
-  .tline h2 {
-    font-size: 2.35rem;
-    line-height: 38px;
-    color: white; }
-  .tline h3 {
-    font-size: 2.23rem;
-    line-height: 39px;
-    color: #ff5201; }
+@media (max-width: 561px) {
+  .tline {
+    top: 85%;
+    left: 43%; }
   .indexbtns {
-    top: 12px;
-    font-size: 0.9rem;
-    line-height: 30px; }
+    font-size: 0.65rem;
+    line-height: 20px; }
   .image.is-48x48 {
-    width: 20px;
-    height: 20px; }
-  .indexbtns span {
-    margin-left: 5px; } }
+    width: 19px;
+    height: 19px; } }
 
 @media (max-width: 461px) {
   .tline-ctn {
     height: 70%; }
-  .tline h2 {
-    margin: 0 auto;
-    width: 283px;
-    font-size: 3rem;
-    line-height: 64px; }
-  .tline h3 {
-    font-size: 1.7rem;
-    line-height: 70px; }
-  .btn-flex-ctn {
-    flex-direction: column; }
-  .indexbtns {
-    top: 10px;
+  .tline {
+    top: 50%;
     left: 50%;
-    transform: translateX(-50%);
-    font-size: 1.2rem;
-    line-height: 40px; }
-  .indexbtns:nth-child(1) {
-    margin-bottom: 15px; }
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); }
+  .tline h2 {
+    text-align: right;
+    font-size: 2.6rem;
+    line-height: 42px; }
+  .tline h3 {
+    font-size: 1.9rem;
+    line-height: 38px;
+    text-align: left; }
+  .btn-ctn {
+    padding-top: 8px; }
+  .indexbtns {
+    font-size: 0.6rem;
+    line-height: 25px;
+    letter-spacing: 0.5px; }
   .indexbtns:nth-child(2) {
-    margin-left: 0px; }
+    margin-left: 10px; }
   .image.is-48x48 {
-    width: 34px;
-    height: 34px; }
+    width: 20px;
+    height: 20px; }
   .popup {
     width: 70%; } }
 
