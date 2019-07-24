@@ -34,9 +34,10 @@ function closeVideo(e) {
 
   e.preventDefault();
 
+/*
   //if pointer/mouse/touch does not move
   if(e.clientX == down_start.x && e.clientY == down_start.y) {
-
+*/
     //hide overlay and video-ctn
     overlay.classList.remove("show");
     videoCtn.classList.remove("show");
@@ -44,16 +45,17 @@ function closeVideo(e) {
     for(var i = 0; i < videos.length ; i++) {
 
       if(videos[i].classList.contains("show")) {
-        videos[i].children[0].children[0].pause();
+        videos[i].children[0].pause();
       }
 
       videos[i].classList.remove("show");
 
-    }
-
+    //}
+/*
     closeBtn.removeEventListener('click', closeVideo, false);
     closeBtn.removeEventListener('touchend', closeVideo, false);
     closeBtn.removeEventListener('touchstart', detectMove, false);
+*/
 
   }
   

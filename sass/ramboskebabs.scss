@@ -5,13 +5,6 @@ $button-padding-horizontal: 0.1em;
 
 @charset "utf-8";
 
-//bulma components
-@import "../node_modules/bulma/sass/utilities/_all.sass";
-@import "../node_modules/bulma/sass/elements/button.sass";
-@import "../node_modules/bulma/sass/elements/image.sass";
-//@import "../node_modules/bulma-timeline/dist/css/bulma-timeline.sass";
-//@import "../node_modules/~bulma-timeline";
-
 //partials
 @import "common";
 @import "header";
@@ -40,6 +33,23 @@ body {
   height: 100%;
   min-width: 320px;
   min-height: 568px;
+}
+
+//from bulma
+.button {
+  display: inline-flex;
+  position: relative;
+  background-color: #1e1e1e;
+  cursor: pointer;
+  justify-content: center;
+  padding-bottom: calc(0.375em - 0px);
+  padding-top: calc(0.375em - 0px);
+  text-align: center;
+  white-space: nowrap;
+  --webkit-appearance: none;
+  align-items: center;
+  box-shadow: none;
+  vertical-align: top;
 }
 
 @media (orientation: landscape) {

@@ -13,16 +13,15 @@
 
     <link rel="stylesheet" href="../css/ramboskebabs.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
-    <!--<link rel="stylesheet" href="../css/reset.css">-->
   </head>
   <body>
     {{> header}}
     <div id="event-overlay">
-      <span class="close"></span>
     </div>
     <div id="video-ctn">
-      <div id="video-event-hype" class="event-video">
-        <video class='video-js' controls preload='auto' poster='../images/hype-poster.jpg' data-setup='{}'>
+      <span class="close"></span>
+      <!--<div id="video-event-hype" class="event-video">-->
+        <video id="video-event-hype" class='video-js event-video' controls preload='auto' poster='../images/events/hype-poster.jpg' data-setup='{}'>
           <source src='../videos/s-video.mp4' type='video/mp4'>
           <source src='MY_VIDEO.webm' type='video/webm'>
           <p class='vjs-no-js'>
@@ -30,9 +29,9 @@
             <a href='https://videojs.com/html5-video-support/' target='_blank'>supports HTML5 video</a>
           </p>
         </video>
-      </div>
-      <div id="video-event-pay" class="event-video">
-        <video class='video-js' controls preload='auto' width='640' height='264' poster='../images/hype-poster.jpg' data-setup='{}'>
+      <!--</div>-->
+      <!--<div class="event-video">-->
+        <video id="video-event-pay" class='video-js event-video' controls preload='auto' poster='../images/events/hype-poster.jpg' data-setup='{}'>
           <source src='../videos/s-video.mp4' type='video/mp4'>
           <source src='MY_VIDEO.webm' type='video/webm'>
           <p class='vjs-no-js'>
@@ -40,12 +39,12 @@
             <a href='https://videojs.com/html5-video-support/' target='_blank'>supports HTML5 video</a>
           </p>
         </video>
-      </div>
+      <!--</div>-->
     </div>
     <div id="event-bg">
-      <img id="event-hype" class="poster-img active-poster" data-video="video-event-hype" src="../images/hype-poster.jpg" data-index="0" draggable="false">
-      <img id="event-pay" class="poster-img" data-video="video-event-pay" src="../images/pay-poster.jpg" data-index="1" draggable="false">
-      <img id="event-present" class="poster-img" data-video="video-event-present" src="../images/hype-poster.jpg" data-index="2" draggable="false">
+      <img id="event-hype" class="poster-img active-poster" data-video="video-event-hype" src="../images/events/hype-poster.jpg" data-index="0" draggable="false">
+      <img id="event-pay" class="poster-img" data-video="video-event-pay" src="../images/events/pay-poster.jpg" data-index="1" draggable="false">
+      <img id="event-present" class="poster-img" data-video="video-event-present" src="../images/events/hype-poster.jpg" data-index="2" draggable="false">
     </div>
     <div id="event-ctn">
       {{> eventTimeline}}
