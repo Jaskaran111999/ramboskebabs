@@ -41,24 +41,24 @@ body {
 
 .tline h2, h3 {
   margin: 0px;
-  text-align: center;
+  text-align: left;
 }
 
 .tline {
   h2 {
     font-family: 'Bungee Inline', cursive;
     font-weight: 400;
-    font-size: 7rem;
-    line-height: 88px;
+    font-size: 5.5rem;
+    line-height: 74px;
     color: #ff5201;
   }
 
   h3 {
-    margin-top: 10px;
+    margin-top: 5px;
     font-family: 'Piedra', cursive;
     font-weight: 400;
-    font-size: 5.3rem;
-    line-height: 95px;
+    font-size: 6rem;
+    line-height: 116px;
     color: #ecb656;
   }
 }
@@ -66,7 +66,7 @@ body {
 .btn-ctn {
   display: flex;
   flex-direction: row;
-  padding-top: 15px;
+  padding-top: 10px;
 }
 
 .indexbtns {
@@ -218,8 +218,8 @@ body {
 
     h3 {
       margin-top: 5px;
-      font-size: 3.1rem;
-      line-height: 56px;
+      font-size: 4.5rem;
+      line-height: 88px;
     }
   }
 
@@ -251,8 +251,8 @@ body {
     }
 
     h3 {
-      font-size: 2.32rem;
-      line-height: 45px;
+      font-size: 3rem;
+      line-height: 59px;
     }
   }
 
@@ -325,8 +325,8 @@ body {
   }
 
   .tline h3 {
-    font-size: 1.9rem;
-    line-height: 38px;
+    font-size: 2.9rem;
+    line-height: 50px;
     text-align: left;
   }
 
