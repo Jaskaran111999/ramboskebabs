@@ -1,8 +1,5 @@
 node_modules/
-#images/
-#videos/
-#fonts/
-#/public/css
 nodemon.json
+web.zip
 *.swp
 *.swo

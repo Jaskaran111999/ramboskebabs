@@ -13,12 +13,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "bulma-timeline": "^3.0.1",
     "express": "^4.16.4",
     "hbs": "^4.0.4"
   },
   "devDependencies": {
-    "bulma": "^0.7.2",
     "node-sass": "^4.11.0",
     "nodemon": "^1.18.9"
   }
