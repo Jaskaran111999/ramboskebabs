@@ -1,10 +1,12 @@
 <ul class="menu-categories">
+
   <li class="menu-category-ctn">
     <span class="menu-category">Exclusive Items</span>
     <ul class="menu-items">
       <li class="menu-item" data-imgpath={{menuImgPaths.exItemsImgPaths.rambosSpecial}}>Rambo's Special</li>
     </ul>
   </li>
+
   <li class="menu-category-ctn">
     <span class="menu-category">Kebabs</span>
     <ul class="menu-items">
@@ -36,11 +38,20 @@
         data-srcSetPath-png="{{menuImgPaths.kebabImgPaths.mKebab.png.srcset}}"
         data-imgAlt="{{menuImgPaths.kebabImgPaths.mKebab.alt}}">Mix(Lamb, Chicken)</li>
 
-      <li class="menu-item" data-imgpath={{menuImgPaths.kebabImgPaths.fKebab}}>Falafel(Vegetarian)</li>
+      <li class="menu-item"
+        data-webpSizes="{{menuImgPaths.kebabImgPaths.fKebab.webp.sizes}}" 
+        data-imgpath-webp="{{menuImgPaths.kebabImgPaths.fKebab.webp.src}}" 
+        data-srcSetPath-webp="{{menuImgPaths.kebabImgPaths.fKebab.webp.srcset}}" 
+        data-pngSizes="{{menuImgPaths.kebabImgPaths.fKebab.png.sizes}}" 
+        data-imgpath-png="{{menuImgPaths.kebabsImgPaths.fKebab.png.src}}" 
+        data-srcSetPath-png="{{menuImgPaths.kebabImgPaths.fKebab.png.srcset}}"
+        data-imgAlt="{{menuImgPaths.kebabImgPaths.fKebab.alt}}">Falafel(Vegetarian)</li>
+
       <li class="menu-item" data-imgpath={{menuImgPaths.kebabImgPaths.lKebabMeal}}>Lamb Meal</li>
       <li class="menu-item" data-imgpath={{menuImgPaths.kebabImgPaths.cKebabMeal}}>Chicken Meal</li>
     </ul>
   </li>
+
   <li class="menu-category-ctn">
     <span class="menu-category">Snackpacks</span>
     <ul class="menu-items">
@@ -57,6 +68,48 @@
         data-imgAlt="{{menuImgPaths.snackpackImgPaths.fSnackpack.alt}}">Falafel(Vegetarian)</li>
     </ul>
   </li>
+
+  <li class="menu-category-ctn">
+    <span class="menu-category">Saladpacks</span>
+    <ul class="menu-items">
+      <li class="menu-item" 
+        data-webpSizes="{{menuImgPaths.saladpackImgPaths.lSaladpack.webp.sizes}}" 
+        data-imgpath-webp="{{menuImgPaths.saladpackImgPaths.lSaladpack.webp.src}}" 
+        data-srcSetPath-webp="{{menuImgPaths.saladpackImgPaths.lSaladpack.webp.srcset}}" 
+        data-pngSizes="{{menuImgPaths.saladpackImgPaths.lSaladpack.png.sizes}}" 
+        data-imgpath-png="{{menuImgPaths.saladpackImgPaths.lSaladpack.png.src}}" 
+        data-srcSetPath-png="{{menuImgPaths.saladpackImgPaths.lSaladpack.png.srcset}}"
+        data-imgAlt="{{menuImgPaths.saladpackImgPaths.lSaladpack.alt}}">Lamb</li>
+
+      <li class="menu-item" 
+        data-webpSizes="{{menuImgPaths.saladpackImgPaths.cSaladpack.webp.sizes}}" 
+        data-imgpath-webp="{{menuImgPaths.saladpackImgPaths.cSaladpack.webp.src}}" 
+        data-srcSetPath-webp="{{menuImgPaths.saladpackImgPaths.cSaladpack.webp.srcset}}" 
+        data-pngSizes="{{menuImgPaths.saladpackImgPaths.cSaladpack.png.sizes}}" 
+        data-imgpath-png="{{menuImgPaths.saladpackImgPaths.cSaladpack.png.src}}" 
+        data-srcSetPath-png="{{menuImgPaths.saladpackImgPaths.cSaladpack.png.srcset}}"
+        data-imgAlt="{{menuImgPaths.saladpackImgPaths.cSaladpack.alt}}">Chicken</li>
+
+      <li class="menu-item" 
+        data-webpSizes="{{menuImgPaths.saladpackImgPaths.mSaladpack.webp.sizes}}" 
+        data-imgpath-webp="{{menuImgPaths.saladpackImgPaths.mSaladpack.webp.src}}" 
+        data-srcSetPath-webp="{{menuImgPaths.saladpackImgPaths.mSaladpack.webp.srcset}}" 
+        data-pngSizes="{{menuImgPaths.saladpackImgPaths.mSaladpack.png.sizes}}" 
+        data-imgpath-png="{{menuImgPaths.saladpackImgPaths.mSaladpack.png.src}}" 
+        data-srcSetPath-png="{{menuImgPaths.saladpackImgPaths.mSaladpack.png.srcset}}"
+        data-imgAlt="{{menuImgPaths.saladpackImgPaths.mSaladpack.alt}}">Mix</li>
+
+      <li class="menu-item" 
+        data-webpSizes="{{menuImgPaths.saladpackImgPaths.fSaladpack.webp.sizes}}" 
+        data-imgpath-webp="{{menuImgPaths.saladpackImgPaths.fSaladpack.webp.src}}" 
+        data-srcSetPath-webp="{{menuImgPaths.saladpackImgPaths.fSaladpack.webp.srcset}}" 
+        data-pngSizes="{{menuImgPaths.saladpackImgPaths.fSaladpack.png.sizes}}" 
+        data-imgpath-png="{{menuImgPaths.saladpackImgPaths.fSaladpack.png.src}}" 
+        data-srcSetPath-png="{{menuImgPaths.saladpackImgPaths.fSaladpack.png.srcset}}"
+        data-imgAlt="{{menuImgPaths.saladpackImgPaths.fSaladpack.alt}}">Falafel</li>
+    </ul>
+  </li>
+
   <li class="menu-category-ctn">
     <span class="menu-category">Ricepacks</span>
     <ul class="menu-items">
@@ -96,17 +149,82 @@
         data-imgpath-png="{{menuImgPaths.ricepackImgPaths.fRicepack.png.src}}" 
         data-srcSetPath-png="{{menuImgPaths.ricepackImgPaths.fRicepack.png.srcset}}"
         data-imgAlt="{{menuImgPaths.ricepackImgPaths.fRicepack.alt}}">Falafel(Vegetarian)</li>
-
     </ul>
   </li>
+
   <li class="menu-category-ctn">
     <span class="menu-category">Meatpacks</span>
     <ul class="menu-items">
-      <li class="menu-item" data-imgpath={{menuImgPaths.meatpackImgPaths.lMeatpack}}>Lamb</li>
-      <li class="menu-item" data-imgpath={{menuImgPaths.meatpackImgPaths.cMeatpack}}>Chicken</li>
-      <li class="menu-item" data-imgpath={{menuImgPaths.meatpackImgPaths.mMeatpack}}>Mix(Lamb, Chicken)</li>
+      <li class="menu-item" 
+        data-webpSizes="{{menuImgPaths.meatpackImgPaths.lMeatpack.webp.sizes}}" 
+        data-imgpath-webp="{{menuImgPaths.meatpackImgPaths.lMeatpack.webp.src}}" 
+        data-srcSetPath-webp="{{menuImgPaths.meatpackImgPaths.lMeatpack.webp.srcset}}" 
+        data-pngSizes="{{menuImgPaths.meatpackImgPaths.lMeatpack.png.sizes}}" 
+        data-imgpath-png="{{menuImgPaths.meatpackImgPaths.lMeatpack.png.src}}" 
+        data-srcSetPath-png="{{menuImgPaths.meatpackImgPaths.lMeatpack.png.srcset}}"
+        data-imgAlt="{{menuImgPaths.meatpackImgPaths.lMeatpack.alt}}">Lamb</li>
+
+      <li class="menu-item" 
+        data-webpSizes="{{menuImgPaths.meatpackImgPaths.cMeatpack.webp.sizes}}" 
+        data-imgpath-webp="{{menuImgPaths.meatpackImgPaths.cMeatpack.webp.src}}" 
+        data-srcSetPath-webp="{{menuImgPaths.meatpackImgPaths.cMeatpack.webp.srcset}}" 
+        data-pngSizes="{{menuImgPaths.meatpackImgPaths.cMeatpack.png.sizes}}" 
+        data-imgpath-png="{{menuImgPaths.meatpackImgPaths.cMeatpack.png.src}}" 
+        data-srcSetPath-png="{{menuImgPaths.meatpackImgPaths.cMeatpack.png.srcset}}"
+        data-imgAlt="{{menuImgPaths.meatpackImgPaths.cMeatpack.alt}}">Chicken</li>
+
+      <li class="menu-item" 
+        data-webpSizes="{{menuImgPaths.meatpackImgPaths.mMeatpack.webp.sizes}}" 
+        data-imgpath-webp="{{menuImgPaths.meatpackImgPaths.mMeatpack.webp.src}}" 
+        data-srcSetPath-webp="{{menuImgPaths.meatpackImgPaths.mMeatpack.webp.srcset}}" 
+        data-pngSizes="{{menuImgPaths.meatpackImgPaths.mMeatpack.png.sizes}}" 
+        data-imgpath-png="{{menuImgPaths.meatpackImgPaths.mMeatpack.png.src}}" 
+        data-srcSetPath-png="{{menuImgPaths.meatpackImgPaths.mMeatpack.png.srcset}}"
+        data-imgAlt="{{menuImgPaths.meatpackImgPaths.mMeatpack.alt}}">Mix</li>
     </ul>
   </li>
+
+  <li class="menu-category-ctn">
+    <span class="menu-category">Platters</span>
+    <ul class="menu-items">
+      <li class="menu-item" 
+        data-webpSizes="{{menuImgPaths.platterImgPaths.lPlatter.webp.sizes}}" 
+        data-imgpath-webp="{{menuImgPaths.platterImgPaths.lPlatter.webp.src}}" 
+        data-srcSetPath-webp="{{menuImgPaths.platterImgPaths.lPlatter.webp.srcset}}" 
+        data-pngSizes="{{menuImgPaths.platterImgPaths.lPlatter.png.sizes}}" 
+        data-imgpath-png="{{menuImgPaths.platterImgPaths.lPlatter.png.src}}" 
+        data-srcSetPath-png="{{menuImgPaths.platterImgPaths.lPlatter.png.srcset}}"
+        data-imgAlt="{{menuImgPaths.platterImgPaths.lPlatter.alt}}">Lamb</li>
+
+      <li class="menu-item" 
+        data-webpSizes="{{menuImgPaths.platterImgPaths.cPlatter.webp.sizes}}" 
+        data-imgpath-webp="{{menuImgPaths.platterImgPaths.cPlatter.webp.src}}" 
+        data-srcSetPath-webp="{{menuImgPaths.platterImgPaths.cPlatter.webp.srcset}}" 
+        data-pngSizes="{{menuImgPaths.platterImgPaths.cPlatter.png.sizes}}" 
+        data-imgpath-png="{{menuImgPaths.platterImgPaths.cPlatter.png.src}}" 
+        data-srcSetPath-png="{{menuImgPaths.platterImgPaths.cPlatter.png.srcset}}"
+        data-imgAlt="{{menuImgPaths.platterImgPaths.cPlatter.alt}}">Chicken</li>
+
+      <li class="menu-item" 
+        data-webpSizes="{{menuImgPaths.platterImgPaths.mPlatter.webp.sizes}}" 
+        data-imgpath-webp="{{menuImgPaths.platterImgPaths.mPlatter.webp.src}}" 
+        data-srcSetPath-webp="{{menuImgPaths.platterImgPaths.mPlatter.webp.srcset}}" 
+        data-pngSizes="{{menuImgPaths.platterImgPaths.mPlatter.png.sizes}}" 
+        data-imgpath-png="{{menuImgPaths.platterImgPaths.mPlatter.png.src}}" 
+        data-srcSetPath-png="{{menuImgPaths.platterImgPaths.mPlatter.png.srcset}}"
+        data-imgAlt="{{menuImgPaths.platterImgPaths.mPlatter.alt}}">Mix</li>
+
+      <li class="menu-item" 
+        data-webpSizes="{{menuImgPaths.platterImgPaths.vPlatter.webp.sizes}}" 
+        data-imgpath-webp="{{menuImgPaths.platterImgPaths.vPlatter.webp.src}}" 
+        data-srcSetPath-webp="{{menuImgPaths.platterImgPaths.vPlatter.webp.srcset}}" 
+        data-pngSizes="{{menuImgPaths.platterImgPaths.vPlatter.png.sizes}}" 
+        data-imgpath-png="{{menuImgPaths.platterImgPaths.vPlatter.png.src}}" 
+        data-srcSetPath-png="{{menuImgPaths.platterImgPaths.vPlatter.png.srcset}}"
+        data-imgAlt="{{menuImgPaths.platterImgPaths.vPlatter.alt}}">Vegetarian</li>
+    </ul>
+  </li>
+
   <li class="menu-category-ctn">
     <span class="menu-category">Appetizers</span>
     <ul class="menu-items">
@@ -139,8 +257,25 @@
       <ul class="menu-items">
       <li class="menu-item" data-imgpath={{menuImgPaths.addonImgPaths.cheese}}>Cheese</li>
       <li class="menu-item" data-imgpath={{menuImgPaths.addonImgPaths.pChillies}}>Pickeled Chillies</li>
-      <li class="menu-item" data-imgpath={{menuImgPaths.addonImgPaths.hommus}}>Hommus</li>
-      <li class="menu-item" data-imgpath={{menuImgPaths.addonImgPaths.tzatziki}}>Tzatziki</li>
+
+      <li class="menu-item" 
+        data-webpSizes="{{menuImgPaths.addonImgPaths.hommus.webp.sizes}}" 
+        data-imgpath-webp="{{menuImgPaths.addonImgPaths.hommus.webp.src}}" 
+        data-srcSetPath-webp="{{menuImgPaths.addonImgPaths.hommus.webp.srcset}}" 
+        data-pngSizes="{{menuImgPaths.addonImgPaths.hommus.png.sizes}}" 
+        data-imgpath-png="{{menuImgPaths.addonImgPaths.hommus.png.src}}" 
+        data-srcSetPath-png="{{menuImgPaths.addonImgPaths.hommus.png.srcset}}"
+        data-imgAlt="{{menuImgPaths.addonImgPaths.hommus.alt}}">Hommus</li>
+
+      <li class="menu-item" 
+        data-webpSizes="{{menuImgPaths.addonImgPaths.tzatziki.webp.sizes}}" 
+        data-imgpath-webp="{{menuImgPaths.addonImgPaths.tzatziki.webp.src}}" 
+        data-srcSetPath-webp="{{menuImgPaths.addonImgPaths.tzatziki.webp.srcset}}" 
+        data-pngSizes="{{menuImgPaths.addonImgPaths.tzatziki.png.sizes}}" 
+        data-imgpath-png="{{menuImgPaths.addonImgPaths.tzatziki.png.src}}" 
+        data-srcSetPath-png="{{menuImgPaths.addonImgPaths.tzatziki.png.srcset}}"
+        data-imgAlt="{{menuImgPaths.addonImgPaths.tzatziki.alt}}">Tzatziki</li>
+
       <li class="menu-item" data-imgpath={{menuImgPaths.addonImgPaths.chips }}>Chips</li>
       <li class="menu-item" data-imgpath={{menuImgPaths.addonImgPaths.flakes}}>Flakes</li>
       <li class="menu-item" data-imgpath={{menuImgPaths.addonImgPaths.extraMeat}}>Extra Meat</li>
