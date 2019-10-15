@@ -34,7 +34,7 @@ app.get('/events', (req, res) => {
   res.render('events.hbs');
 });
 
-app.get('/sitemap.xml', (req, res) => {
+app.get('/sitemap', (req, res) => {
   res.sendFile('sitemap.xml');
 });
 
