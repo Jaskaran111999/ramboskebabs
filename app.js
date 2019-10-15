@@ -34,6 +34,10 @@ app.get('/events', (req, res) => {
   res.render('events.hbs');
 });
 
+app.get('/sitemap.xml', (req, res) => {
+  res.sendFile('sitemap.xml');
+});
+
 app.listen(port, '', () => {
   console.log(`Listening on port ${port}`);
 });
