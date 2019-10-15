@@ -35,7 +35,7 @@ app.get('/events', (req, res) => {
 });
 
 app.get('/sitemap', (req, res) => {
-  res.sendFile('sitemap.xml');
+  res.sendFile( __dirname + '/sitemap.xml');
 });
 
 app.listen(port, '', () => {
