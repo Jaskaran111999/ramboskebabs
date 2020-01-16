@@ -48,24 +48,27 @@ function animateMenuItems(e) {
   e.target.classList.add('item-is-selected');
   
   //get the menu item src and srcset
-  var webpSizes = event.target.getAttribute("data-webpSizes");
-  var webpImgPath = event.target.getAttribute("data-imgpath-webp");
-  var webpSet = event.target.getAttribute("data-srcSetPath-webp");
+  //var webpSizes = event.target.getAttribute("data-webpSizes");
+  //var webpImgPath = event.target.getAttribute("data-imgpath-webp");
+  //var webpSet = event.target.getAttribute("data-srcSetPath-webp");
 
-  var pngSizes = event.target.getAttribute("data-pngSizes");
-  var pngImgPath = event.target.getAttribute("data-imgpath-png");
-  var pngSet = event.target.getAttribute("data-srcSetPath-png");
+  //var pngSizes = event.target.getAttribute("data-pngSizes");
+  //var pngImgPath = event.target.getAttribute("data-imgpath-png");
+  //var pngSet = event.target.getAttribute("data-srcSetPath-png");
 
-  var imgAlt = event.target.getAttribute("data-imgAlt");
+  var imgSrc = event.target.getAttribute("data-imgsrc");
+  var imgAlt = event.target.getAttribute("data-imgalt");
 
-  var webpSource = itemImgCtn.children[0];
-  var pngSource = itemImgCtn.children[1];
+  //var webpSource = itemImgCtn.children[0];
+  //var pngSource = itemImgCtn.children[1];
 
   //change sizes src and srcset of sources
-  webpSource.sizes = webpSizes;
-  webpSource.srcset = webpSet;
-  pngSource.sizes = pngSizes;
-  pngSource.srcset = pngSet;
+  //webpSource.sizes = webpSizes;
+  //webpSource.srcset = webpSet;
+  //pngSource.sizes = pngSizes;
+  //pngSource.srcset = pngSet;
+
+  itemImg.src = imgSrc;
   itemImg.alt = imgAlt;
 }
 

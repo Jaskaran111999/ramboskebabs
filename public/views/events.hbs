@@ -11,7 +11,7 @@
     <link href="https://vjs.zencdn.net/7.5.5/video-js.css" rel="stylesheet">
     <script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
 
-    <link rel="stylesheet" href="../css/ramboskebabs.css">
+    <link rel="stylesheet" href="/public/css/ramboskebabs.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
   </head>
   <body>
@@ -21,8 +21,8 @@
     <div id="video-ctn">
       <span class="close"></span>
       <!--<div id="video-event-hype" class="event-video">-->
-        <video id="video-event-hype" class='video-js event-video' controls preload='auto' poster='../images/events/hype-poster.jpg' data-setup='{}'>
-          <source src='../videos/s-video.mp4' type='video/mp4'>
+        <video id="video-event-hype" class='video-js event-video' controls preload='auto' poster='/public/images/events/hype-poster.jpg' data-setup='{}'>
+          <source src='/public/videos/s-video.mp4' type='video/mp4'>
           <source src='MY_VIDEO.webm' type='video/webm'>
           <p class='vjs-no-js'>
             To view this video please enable JavaScript, and consider upgrading to a web browser that
@@ -32,7 +32,7 @@
       <!--</div>-->
       <!--<div class="event-video">-->
         <video id="video-event-pay" class='video-js event-video' controls preload='auto' poster='../images/events/hype-poster.jpg' data-setup='{}'>
-          <source src='../videos/s-video.mp4' type='video/mp4'>
+          <source src='/public/videos/s-video.mp4' type='video/mp4'>
           <source src='MY_VIDEO.webm' type='video/webm'>
           <p class='vjs-no-js'>
             To view this video please enable JavaScript, and consider upgrading to a web browser that
@@ -42,16 +42,16 @@
       <!--</div>-->
     </div>
     <div id="event-bg">
-      <img id="event-hype" class="poster-img active-poster" data-video="video-event-hype" src="../images/events/hype-poster.jpg" data-index="0" draggable="false">
-      <img id="event-pay" class="poster-img" data-video="video-event-pay" src="../images/events/pay-poster.jpg" data-index="1" draggable="false">
-      <img id="event-present" class="poster-img" data-video="video-event-present" src="../images/events/hype-poster.jpg" data-index="2" draggable="false">
+      <img id="event-hype" class="poster-img active-poster" data-video="video-event-hype" src="/public/images/events/hype-poster.jpg" data-index="0" draggable="false">
+      <img id="event-pay" class="poster-img" data-video="video-event-pay" src="/public/images/events/pay-poster.jpg" data-index="1" draggable="false">
+      <img id="event-present" class="poster-img" data-video="video-event-present" src="/public/images/events/hype-poster.jpg" data-index="2" draggable="false">
     </div>
     <div id="event-ctn">
       {{> eventTimeline}}
     </div>
     {{>footer}}
   </body>
-  <script type="application/javascript" src="../scripts/animations.js"></script>
-  <script type="application/javascript" src="../scripts/animateEvents.js"></script>
+  <script type="application/javascript" src="/public/scripts/animations.js"></script>
+  <script type="application/javascript" src="/public/scripts/animateEvents.js"></script>
   <script src='https://vjs.zencdn.net/7.5.5/video.js'></script>
 </html>

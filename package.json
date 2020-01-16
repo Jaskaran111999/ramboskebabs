@@ -14,13 +14,14 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.16.4",
-    "fs": "0.0.1-security",
+    "fs": "0.0.2",
     "hbs": "^4.0.4",
     "http": "0.0.0",
     "https": "^1.0.0"
   },
   "devDependencies": {
-    "node-sass": "^4.11.0",
-    "nodemon": "^1.18.9"
+    "cloudinary-core": "^2.8.0",
+    "node-sass": "^4.13.0",
+    "nodemon": "^2.0.1"
   }
 }
