@@ -3,7 +3,7 @@ function constructImgUrls() {
   const path = 'menu';
 
   const imgCtn = document.getElementsByClassName("item-img-ctn")[0];
-  const imgParams = `w_${imgCtn.clientWidth},h_${imgCtn.clientHeight},f_auto`;
+  const imgParams = `w_${imgCtn.clientWidth},f_auto`;
 
   Array.from(document.querySelectorAll('[data-imgsrc]')).forEach(image => {
     var url = `${baseURL}/${imgParams}/v${image.dataset.vr}/${path}/${image.dataset.imgsrc}`;
